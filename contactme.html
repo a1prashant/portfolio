@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="nav.css">
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+    </head>
+    <body>
+        <div id="nav-placeholder">
+        </div>
+
+        <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        
+        <script>
+        $(function(){
+          $("#country-placeholder").load("options_countries.html");
+        });
+        </script>
+        
+        <h1>Contact Me</h1>
+        <div class="container">
+            <form action="/action_page.php">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+                <label for="email">E-Mail</label>
+                <input type="email" id="email" name="email" placeholder="Your e-mail id..">
+
+
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="Your phone number..">
+                
+                <label for="country">Country</label>
+                <div id="country-placeholder">
+                </div>
+
+                <label for="subject">Subject</label>
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+                <input type="submit" value="Submit">
+                
+                <div class="g-recaptcha" data-sitekey="6LeTkH8UAAAAALzSFOE7DPglnasEj4YUaHhml7Tl"></div>
+            </form>
+        </div>
+    </body>
+</html>
