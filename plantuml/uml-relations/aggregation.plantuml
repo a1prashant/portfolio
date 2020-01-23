@@ -1,0 +1,10 @@
+@startuml
+class B
+
+class A {
+    B * ptr;
+}
+
+A o-- B
+
+@enduml

@@ -1,0 +1,51 @@
+<h1>Definition-Of-Done (DOD):</h1>
+<p>For most User Stories for development tasks, to a large extent, the <em>DOD</em> can be standardized.</p>
+<p>'paste' these as is in GitLab (or any other where markdown is allowed)
+<code>- [ ] Code builds with 0 errors and 0 warnings
+- [ ] Sufficient automated tests are written for each aspect of requirement
+- [ ] Code checked-in to a distinctly named branch
+- [ ] Automated Unit test cases are added, and passed
+- [ ] Code linter is run and passed
+- [ ] Static Code Analyzer is run and its values are within limits
+- [ ] (if any) Automation is added and made reusable
+- [ ] (if any) peculiar observations are noted in JIRA/GitHub/Confluence
+- [ ] (wherever necessary) User-Documentation is updated
+- [ ] Basic validation is documented and added to input controllers
+- [ ] Standardized logging is added (with timestamp, with log-levels and optimum amount of)
+- [ ] Generated logs are verified and attached to Ticket
+- [ ] For UI, is responsive on all agreed platforms
+- [ ] For backend, is tested for all agreed platforms and environments</code></p>
+<p>Certain steps could be verified/automated with every check-in:
+- linting
+- automatic document generation (e.g. Doxygen)
+- static-code-analyzer
+- check-in comments
+- code coverage</p>
+<hr />
+<h1>User story (US):</h1>
+<h2>Following template could be used:</h2>
+<ul>
+<li>For a given &lt; role &gt;</li>
+<li>Under certain &lt; situation &gt;</li>
+<li>An &lt; action &gt; is taken</li>
+<li>with an &lt; expectation &gt; of certain &lt; result &gt;</li>
+</ul>
+<hr />
+<h1>Acceptance Criteria (AC)</h1>
+<h2>Characteristics of AC</h2>
+<ul>
+<li>is specific for every task</li>
+<li>should be written very thoughtfully</li>
+<li>should be clearly stated (no gray)</li>
+<li>include functional as well as non-functional criteria</li>
+</ul>
+<h2>Possible format:</h2>
+<ul>
+<li>have &lt; when &gt; this then &lt; that &gt; should take place</li>
+</ul>
+<h2>Guidelines</h2>
+<ul>
+<li>Possibly for a US, AC could express &lt; situation &gt; more clearly</li>
+<li>When certain action is taken, then express &lt; result &gt; more clearly</li>
+<li>When certain action is NOT taken, then express &lt; result &gt; clearly</li>
+</ul>

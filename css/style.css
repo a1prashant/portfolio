@@ -1,0 +1,111 @@
+body {
+  font-family: "Raleway";
+  font-size: 20px;
+  background-color: azure;
+}
+
+section {
+  border: 1px solid orange;
+  margin: 5;
+  padding: 5;
+  background-color: cornsilk;
+  box-shadow: lightseagreen;
+}
+
+section > ol > li > ol > li {
+  list-style-type: upper-roman;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+label.page_wip {
+  background-color: yellow;
+  border: tomato;
+  border-style: solid;
+  appearance: button;
+  padding: 2px 2px;
+}
+
+.topic {
+  border: 1px solid lightcoral;
+}
+
+.column {
+  float: left;
+  padding: 0 10px;
+}
+
+.row {
+  margin: 0 -5px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*--- NAV ---*/
+.top-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.top-nav ul > li {
+  float: left;
+}
+
+.top-nav ul > li > a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.top-nav ul > li > a:hover {
+  background-color: #111;
+}
+
+code, .code {
+  background-clip: border-box;
+  border: 6px ridge darkgray;
+  background-color:lightsteelblue;
+  white-space:inherit;
+  padding-left: 20px;
+  display: block;
+  white-space: pre;
+  font-family: 'Courier New', Courier, monospace ;
+  font-size: large
+}
+
+.danger {
+  background-color: red;
+}
+
+.good {
+  background-color: green;
+}
+
+/*--- Footer ---*/
+footer {
+  margin: auto;
+  text-align: center;
+}

@@ -1,0 +1,383 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="script/local.js"></script>
+</head>
+
+<body>
+  <div id="nav-placeholder"></div>
+  <div id="page-wip-placeholder"></div>
+
+  <article>
+    <header>
+      <h1>Useful Development Methodologies</h1>
+      <p></p>
+    </header>
+    <nav>
+      <ul>
+        <li>Agile</li>
+        <li>LeSS</li>
+        <li>TDD</li>
+        <li>Pair Programming</li>
+      </ul>
+    </nav>
+    <section>
+      <p>1970 - Waterfall model</p>
+      <p>1974 - Adaptive Software Development</p>
+      <p>1991 - Rapid Application Development</p>
+      <p>1995 - Scrum</p>
+      <p>1995 - Adaptive Software Development</p>
+      <p>1995 - FDD</p>
+      <p>1995 - DSMD</p>
+      <p>1996 - XP</p>
+      <p>1996 - Crystal Clear</p>
+      <p>2001 - Agile Manifesto</p>
+      <p>2003 - Lean Software Development</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+    </section>
+    <section>
+      <p>History Of Agile</p>
+      <ul>
+        <li>
+          In 2001, 17 signatories gathered and they laid down the foundation
+          of Agile Principles and Manifesto.
+        </li>
+        <li>4 Manifesto</li>
+        <li>12 Agile Principals</li>
+        <li>
+          But in 1930, Walter Shewhart at Bell-labs started Plan-Do-Check-Act
+        </li>
+        <li>
+          Walter's mentee W. Edwards Deming who used the knowledge in WWII
+        </li>
+        <li>Toyota hired Deming</li>
+        <li>
+          In 1986 Ikujiro Nonaka published "The New New Product Development
+          Game"
+        </li>
+        <li>
+          All of this formed basis for Jeff Sutherland and Ken Sschwaber who
+          proposed Scrum framework in 2009.
+        </li>
+      </ul>
+      <p>Agile Manifesto</p>
+      <ul>
+        <li>Individuals and interactions -over- Processes and Tools</li>
+        <li>Working Product -over- Comprehensive Documentation</li>
+        <li>Customer Collaboration -over- Contract Negotiation</li>
+        <li>Responding to change -over- Following a plan</li>
+      </ul>
+      <p>Agile is a <strong>Mindset</strong></p>
+      <p>Described by <strong>4 Values</strong></p>
+      <p>Defined by <strong>12 principles</strong></p>
+      <p>Manifested through unlimited <strong>number of practices</strong></p>
+      <p>Empirical Vs Defined Process</p>
+      <ul>
+        <li>
+          Empirical - For Complex Projects, due to (People, Process,
+          Technology), working in fact-based, experienced-based,
+          Evidence-based manner
+        </li>
+        <li>
+          3 Pillars of Empirical Process - Transparency, Inspection,
+          Adaptation
+        </li>
+      </ul>
+      <p>Scrum Framework</p>
+      <ul>
+        <li>Iterative, Incremental Development</li>
+        <li>Right time</li>
+        <li>Value</li>
+        <li>Self-organizing team</li>
+        <li>Higher Productivity, Faster</li>
+        <li>Customer priorities are evaluated</li>
+        <li>Feedback to team</li>
+        <li>Starts with vage Vision</li>
+        <li>Owner presents prioritized list (Product Backlog)</li>
+        <li>Sprint is timebox (&lt;1 month)</li>
+      </ul>
+      <p>Roles and Events</p>
+      <ul>
+        <li>
+          3 Roles:
+          <ul>
+            <li>
+              Product Owner
+              <ul>
+                <li>Represents Stakeholders</li>
+                <li>Requirements</li>
+                <li>Interested in ROI</li>
+                <li>Prioritizes product backlog</li>
+                <li>Most valuable functinality is implemented first</li>
+                <li>Provides feedback</li>
+              </ul>
+            </li>
+            <li>
+              Team
+              <ul>
+                <li>Is cross functional</li>
+                <li>self sufficient</li>
+                <li>self organized</li>
+                <li>skilled</li>
+                <li>commited and available</li>
+                <li>is accountable</li>
+              </ul>
+            </li>
+            <li>
+              Scrum Master
+              <ul>
+                <li>Scrum process</li>
+                <li>Makes sure everybody plays by rules</li>
+                <li>Conducts ceremonies</li>
+                <li>Removes impediments for team</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          5 Events:&nbsp;
+          <ul>
+            <li>
+              Sprint Planning
+              <ul>
+                <li>Start of sprint</li>
+                <li>
+                  Inputs:
+                  <ul>
+                    <li>Product Backlog</li>
+                    <li>Latest Increment</li>
+                    <li>Velocity of Dev Team</li>
+                  </ul>
+                </li>
+                <li>
+                  Planning
+                  <ul>
+                    <li>Which PBIs to include in sprint</li>
+                    <li>How will we do it?</li>
+                    <li>Team needs to raise issues</li>
+                  </ul>
+                </li>
+                <li>
+                  Outputs
+                  <ul>
+                    <li>Sprint Goals</li>
+                    <li>Sprint Backlog</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <p>Daily Scrum</p>
+            <ul>
+              <li>Timeboxed</li>
+              <li>Full team presence</li>
+              <li>
+                Focus on (What did yesterday? What will do today? Any
+                impediments)
+              </li>
+            </ul>
+            <p>Sprint Review</p>
+            <ul>
+              <li>At end of each sprint</li>
+              <li>To check the increment</li>
+              <li>What functionalities "Done"</li>
+              <li>Update product backlog</li>
+            </ul>
+            <p>Sprint Retrospective</p>
+            <ul>
+              <li>What went well?</li>
+              <li>What could be improved?</li>
+              <li>Dev Team, Scrum Master, Product Owner take part</li>
+            </ul>
+            <p>Sprint</p>
+            <ul>
+              <li>Is an event that includes other 4 events</li>
+              <li>Once one sprint ends other starts</li>
+            </ul>
+          </ul>
+        </li>
+        <p>Scrum Artifacts</p>
+        <ul>
+          <li>
+            Product Backlog
+            <ul>
+              <li>Prioritized</li>
+              <li>Includes everything from requirements</li>
+              <li>Constantly evolving</li>
+            </ul>
+          </li>
+          <li>
+            Increment
+            <ul>
+              <li>Usable Addition</li>
+              <li>
+                New update of the product which owner may choose to release
+              </li>
+            </ul>
+          </li>
+          <li>
+            Sprint backlog
+            <ul>
+              <li>All committed user stories, tasks</li>
+              <li>
+                All needs to be 'developed', 'integrated', 'documented' and
+                'tested'
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </ul>
+      <p>User Stories</p>
+      <ul>
+        <li>Requirements</li>
+        <li>How software should work?</li>
+        <li>
+          Lot of details
+          <ul>
+            <li>
+              is this a:
+              <ul>
+                <li>new capability?</li>
+                <li>change to existing capability?</li>
+              </ul>
+            </li>
+            <li>Who does it affect to?</li>
+            <li>What activity?</li>
+          </ul>
+        </li>
+        <li>Face to face communication with Team</li>
+        <li>Bridge gap between Customer and Developers</li>
+        <li>As a [who], I want [what], Because [why].</li>
+      </ul>
+      <p>User Stories</p>
+      <ul>
+        <li>Reminder to have convesation with your customer</li>
+        <li>high level requirement artifacts</li>
+        <li>
+          3 primary components:
+          <ul>
+            <li>Card</li>
+            <li>Conversation</li>
+            <li>Confirmation</li>
+          </ul>
+        </li>
+        <li>All PB need not be perfect</li>
+        <li>Customer and Team will discover</li>
+        <li>What, Why, Who of the story</li>
+        <li>Collaborative conversation</li>
+        <li>PO must Confirm the Done criteria</li>
+        <li>
+          INVEST Criteria:
+          <ul>
+            <li>Independent</li>
+            <li>Negotiatiable - some flexibility</li>
+            <li>Valuable</li>
+            <li>Estimable</li>
+            <li>Small - Small enough to deliver in a sprint</li>
+            <li>Testable - Agree completeness and verifiable</li>
+          </ul>
+        </li>
+      </ul>
+      <p>Product Backlog Refinement</p>
+      <ul>
+        <li>
+          is an act of adding details, estimate and order to Product Backlog
+        </li>
+        <li>Helps Identify Value in an item</li>
+        <li>Helps Eliminate waste</li>
+        <li>Ongoing process, collaborate with Team and Stakeholders</li>
+        <li>Items are reviewed and revised</li>
+        <li>It is NOT an Event</li>
+        <li>PO can do it as its discretion</li>
+        <li>Helps set Product Vision, Roadmap and Acceptance Criteria</li>
+      </ul>
+      <p>Estimation Techniques</p>
+      <ul>
+        <li>Guessing, approximate, Usable Value</li>
+        <li>Decision Making</li>
+        <li>Helps in building strong team coordination</li>
+        <li>Determining deadlines</li>
+        <li>
+          Relative Estimation (Comparing) [Small, Medium, Large, Extra Large]
+        </li>
+        <li>
+          Planning Poker
+          <ul>
+            <li>Fibonacci sequence or similar</li>
+            <li>Estimators completes discussion</li>
+            <li>Each Privately then reveal the Value</li>
+            <li>Then High/Low estimators tell their reasons</li>
+            <li>Then repeat estimation</li>
+            <li>Once all conviced a value is finalized</li>
+          </ul>
+        </li>
+        <li>
+          T-Shirt size:
+          <ul>
+            <li>XS (1)</li>
+            <li>S (3)</li>
+            <li>M (5-8)</li>
+            <li>L (13-21)</li>
+            <li>XL (30+)</li>
+            <li>Sizes can vary from team to team basis</li>
+            <li>Important to keep them consistant once finalized</li>
+          </ul>
+        </li>
+        <li>
+          Bucket Size:
+          <ul>
+            <li>0, 1, 2, 3, 5, 8, 13, 20, 30, 50, 100, 200</li>
+            <li>First item acts as reference for rest of the items</li>
+            <li>And then put into relevant buckets</li>
+            <li>
+              Its fast, collaborative, provides relative results and
+              encourages accountability
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <p>Scrum Master</p>
+      <ul>
+        <li>Servant Leader</li>
+        <li>Interface between anyone from outside Scrum team for the team</li>
+        <li>Helps everyone, to maximize the value</li>
+        <li>Responsible for team to follow Agile Values</li>
+        <li>Clearing Obstacles</li>
+        <li>Establishing environment for team to be effective</li>
+        <li>Addressing Team Dynamics</li>
+        <li>Ensuring Good Relationships (within and outside) Scrum Team</li>
+        <li>Protecting team from outiside distractions/interruptions</li>
+      </ul>
+    </section>
+    <section>
+      <header>Less</header>
+      <div>
+        <p>Some descriptive text</p>
+      </div>
+    </section>
+    <section>
+      <header>TDD</header>
+      <div>
+        <p>Some descriptive text</p>
+      </div>
+    </section>
+    <section>
+      <header>Pair Programming</header>
+      <div>
+        <p>Some descriptive text</p>
+      </div>
+    </section>
+    <section>
+      <header></header>
+      <div>
+        <p>Some descriptive text</p>
+      </div>
+    </section>
+  </article>
+  <div id="footer-placeholder"></div>
+</body>
+
+</html>

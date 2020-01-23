@@ -1,0 +1,3 @@
+@startuml
+Supertype  <|-- Subtype
+@enduml

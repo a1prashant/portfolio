@@ -1,20 +1,139 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="nav.css">
-        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-        <script src='https://www.google.com/recaptcha/api.js'></script>
-    </head>
-    <body>
-        <div id="nav-placeholder">
-        </div>
 
-        <script>
-        $(function(){
-          $("#nav-placeholder").load("nav.html");
-        });
-        </script>
-        
-        Home page goes here!
-        
-    </body>
+<head>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="script/local.js"></script>
+</head>
+
+<body>
+  <div id="nav-placeholder"></div>
+  <section>
+    <h3>Welcome to Prashant Prabodh's Homepage</h3>
+    <img id="mainimg" src="img/Photo2.jpg" width="10%" />
+    <p>
+      I'm a software developer, architect. Working in AD (Autonomous Driving)
+      and ADAS (Advanced Driver Assistance Systems) domain since August 2019.
+      Prior to that for almost 6 years did low-latency HFT and Market-Data
+      application design, develop. I'm experienced on OOAD, TDD, Modern C++,
+      Clean Code, CI-CD, Agile.
+    </p>
+    <br />
+    <p>
+      I'm open for any related consultation, code-reviews, job offers.
+      <a href="profile.html">My Profile</a>
+    </p>
+    <p>
+      Following are some of my works done as part of self-study, or
+      self-short-projects. I hope you find them useful.
+    </p>
+    <br />
+    <a id="techbits"></a>
+    <ol>
+      <li>
+        <div class="topic">Technical Bits</div>
+        <ol>
+          <li><a href="techbit-big-o-notation.html">Time Complexity (in Big-O notation)</a>
+            : Notes and a reference card</li>
+          <li><a href="techbit-data-structures.html">Data Structures</a>
+            : Short point-wise mention about few basic Data Structures</li>
+          <li><a href="techbit-domain-finance.html">Finance Domain</a>
+            : Trading Technologies, Market Data Applications</li>
+          <li><a href="techbit-automotive.html">Automotive Domain</a>
+            : Tips about ADAS, ROS, FUSA</li>
+          <li><a href="techbit-methodologies.html">Methodologies</a>
+            : Tips about Agile, Scrum, Less, TDD, Pair Programming</li>
+          <li><a href="techbit-tools-and-ci-cd.html">Tools and CI-CD</a>some :
+            Tips about CMake, Bazel, Git, PlantUML</li>
+          <li><a href="techbit-cpp-to-call-from-python.html">
+              Python calling C++ via Boost</a>:</li>
+          <li><a href="techbit-cpp-rule-of-0-3-5.html"> C++: Rule of 0, 3, 5</a>
+            : simple point-wise notes</li>
+          <li><a href="techbit-autosar.html">AUTOSAR</a>: overview</li>
+          <li><a href="techbit-design-thoughts.html">Design Thoughts</a>: Design Principles, SOLID, and Patterns</li>
+          <li><a href="techbit-yaml.html">YAML</a>: Minimum YAML</li>
+          <li><a href="techbit-cpp-smart-pointers.html">C++ Smart Pointers</a>: few reminders</li>
+          <li><a href="techbit-cpptopics.html">C++ Topics</a>: just the listing</li>
+          <li><a href="techbit-core-banking-system.html">Core Banking System</li>
+          <li><a href="techbit-uml-relations.html">Understand UML relations with C++ examples</a></li>
+          <li><a href="techbit-git-branching-strategy.html">Git Branching Strategy</a></li>
+          <li><a href="techbit-userstory-dod-ac.html">How to write User Story, Acceptance Criteria and
+              Definition-of-Done</a></li>
+        </ol>
+      </li>
+      <br />
+      <a id="projects"></a>
+      <li>
+        <div class="topic">My Projects</div>
+        <ol>
+          <li>
+            <a href="https://github.com/a1prashant/justprashant" target="_blank">Prashant Prabodh, Personal Blog</a>
+            : "this" website, a static portal, used [HTML, JS, CSS]
+          </li>
+          <li>
+            <a href="https://github.com/a1prashant/hello-cpp-bazel-gtest" target="_blank">hello-cpp-bazel-gtest</a> :
+            sample hello program to quick start a c++, bazel, gtest based project
+          </li>
+          <li>
+            <a href="https://github.com/a1prashant/fieldconverter" target="_blank">field_converter</a>
+            : cpp: experimental, converts any data-type to any other datatype.
+          </li>
+          <li>
+            <a href="https://github.com/a1prashant/xformersys" target="_blank">xformersys</a>
+            : cpp: experimental transformer system for a typical producer
+            consumer problem
+          </li>
+          <li>
+            <a href="https://github.com/a1prashant/circular_buffer" target="_blank">circular_buffer</a>
+            : cpp: very simple circular_buffer
+          </li>
+          <li>
+            <a href="https://github.com/a1prashant/pscripts" target="_blank" rel="noopener">pscripts</a>
+            : personalized vimrc, ctags, unix shell scripts
+          </li>
+          <li>Runner Application</li>
+          <li>
+            <a href="https://github.com/a1prashant/ytl" target="_blank" rel="noopener">YTL</a>
+            : [Pronounce as Vital] is a C++ 11/14 template library for
+            conversions
+          </li>
+          <li>
+            <a href="https://github.com/a1prashant/PeriodicReminderApp" target="_blank" rel="noopener">Periodic Reminder
+              App (TODO: Haven't uploaded YET)</a>
+            : Flutter based app - works on both Android and IOS, simplest
+            periodic reminder app
+          </li>
+          <li>
+            <a href="https://github.com/a1prashant/bmi-calc-with-flask" target="_blank" rel="noopener">Simple Flask app
+              to calculate BMI</a>
+          </li>
+          <li>
+            <a href="https://github.com/a1prashant/pews" target="_blank" rel="noopener">PEWS</a>
+            : Web2Py based web application for People's Education and Welfare
+            Society
+          </li>
+        </ol>
+      </li>
+      <br />
+      <!-- li>
+          <div class="topic">Trainings by me</div>
+          <ol>
+            <li>one</li>
+            <li>two</li>
+          </ol>
+        </li -->
+      <br />
+      <!-- li>
+          <div class="topic">Trainings by experts - recommendations by me</div>
+          <ol>
+            <li>one</li>
+            <li>two</li>
+          </ol>
+        </li -->
+    </ol>
+  </section>
+  <div id="footer-placeholder"></div>
+</body>
+
 </html>

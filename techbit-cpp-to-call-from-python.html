@@ -1,0 +1,135 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="script/local.js"></script>
+</head>
+
+<body>
+  <div id="nav-placeholder"></div>
+
+  <article>
+    <header>
+      <h1>Call C++ codes from Python</h1>
+      <div id="page-wip-placeholder"></div>
+      <p></p>
+    </header>
+    <!-- nav>
+        <ul>
+          <li>Table</li>
+        </ul>
+      </nav -->
+    <section>
+      <header>Boost Python C++ exposing</header>
+      <div>
+        <p>
+          <a href="https://www.boost.org/doc/libs/1_61_0/libs/python/doc/html/tutorial/tutorial/exposing.html">boost
+            python tutorial link</a>
+        </p>
+        <table>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>Boost Python C++ exposing</td>
+              <td>Use in python</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>BOOST_PYTHON_MODULE(SomeModule)</td>
+              <td>import hello</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>struct MyClass</td>
+              <td>class&lt;MyClass&gt;("MyClass")</td>
+              <td>obj = hello.World()</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>void set(string m) { m_ = m; }</td>
+              <td>.def("set", &amp;MyClass::set)</td>
+              <td>obj.set('Howdy')</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>string greet( ) { return m_; }</td>
+              <td>.def("greet", &amp;MyClass::greet)</td>
+              <td>obj.greet()</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>float data_member;</td>
+              <td>
+                .def_readwrite("data_member", &amp;MyClass::data_member )
+              </td>
+              <td>
+                obj.data_member = 3.14<br />
+                print obj.data_member
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>float get() const;</td>
+              <td>.add_property("rovalue", &amp;MyClass::get)</td>
+              <td>
+                obj.rovalue = 2.45 # error<br />
+                print obj.rovalue
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>void set(float new_value);</td>
+              <td>
+                .add_property("value", &amp;MyClass::get, &amp;MyClass::set)
+              </td>
+              <td>
+                obj.value = 2.33<br />
+                print obj.value
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>struct Base { virtual ~Base(); }</td>
+              <td>
+                class_&lt;Base&gt;("Base")<br />
+                /*...*/<br />
+                ;
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>struct Derived : Base {};</td>
+              <td>
+                class_&lt;Derived, bases&lt;Base&gt; &gt;("Derived")<br />
+                /*...*/<br />
+                ;
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Base * factory() { return new Derived; }</td>
+              <td>
+                .def("factory", factory,
+                return_value_policy&lt;manage_new_object&gt;() )
+              </td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <footer></footer>
+    </section>
+    <aside>
+      <blockquote>TODO:</blockquote>
+    </aside>
+  </article>
+  <div id="footer-placeholder"></div>
+</body>
+
+</html>

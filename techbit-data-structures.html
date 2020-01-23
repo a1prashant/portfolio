@@ -1,0 +1,678 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="script/local.js"></script>
+  </head>
+  <body>
+    <div id="nav-placeholder"></div>
+
+    <article>
+      <header>
+        <h1>Data Structures (DS)</h1>
+        <p>DS is methods of organizing data for effective use</p>
+      </header>
+      <section>
+        <h1>Array</h1>
+        <div>
+          <ul>
+            <li>
+              Attributes
+              <ul>
+                <li>Has size</li>
+                <li>Contiguous, Sequential</li>
+                <li>Of same type</li>
+                <li>Easy to find Position</li>
+                <li>Index based</li>
+              </ul>
+            </li>
+            <li>
+              C++
+              <ul>
+                <li><code>array[index]</code></li>
+                <li><code>STL: std::array</code></li>
+              </ul>
+            </li>
+            <li>
+              Note
+              <ul>
+                <li>Bound checking is important</li>
+                <li>Large size array allocation may cause Stack Overflow</li>
+                <li>
+                  When arrays can dynamically change size they are called-
+                  Dynamic Array e.g. STL::Vector
+                </li>
+              </ul>
+            </li>
+            <li>
+              Applications
+              <ul>
+                <li>1-D : String, Vector, hash table, stack, queue etc</li>
+                <li>2-D : Matrix</li>
+                <li>nD arrays exists</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h1>Stack</h1>
+        <div>
+          <ul>
+            <li>
+              Attributes
+              <ul>
+                <li>Last In, First Out (LIFO) or First In, Last Out (FILO)</li>
+                <li>Insertion and Deletion from one end only.</li>
+                <li>Maintains reference to top of the stack.</li>
+                <li>Push, Pop operations</li>
+                <li>Check Empty or (occasionally, Check Full) operations</li>
+              </ul>
+            </li>
+            <li>
+              C++
+              <ul>
+                <li><code>STL: std::stack</code></li>
+              </ul>
+            </li>
+            <li>
+              Note
+              <ul>
+                <li>
+                  Stack unwinding takes place
+                </li>
+                <li>
+                  so prefer RAII over dynamic-allocation (will cause leak)
+                </li>
+              </ul>
+            </li>
+            <li>
+              Application
+              <ul>
+                <li>Expression parsing</li>
+                <li>Backtracking</li>
+                <li>Function calling</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h1>Queue</h1>
+        <div>
+          <ul>
+            <li>
+              Attributes
+              <ul>
+                <li>First In, First Out (FIFO), First come first serve</li>
+                <li>
+                  Insertion from one end, removal from other end with O(1)
+                </li>
+                <li>Maintains front and back of the queue.</li>
+                <li>Bounded queue has limited fixed number of items</li>
+                <li>Can be implemented as linked-list or deque</li>
+              </ul>
+            </li>
+            <li>
+              C++
+              <ul>
+                <li><code>STL: std::queue</code></li>
+                <li>Wraps around std::deque with limited functions</li>
+              </ul>
+            </li>
+            <li>
+              Note
+              <ul>
+                <li>
+                  Operations: front, back, push at end, pop from front, empty
+                </li>
+                <li>Implementation: Deque, Priority Queue, Circular Queue</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h1>Deque: Double Ended Queue</h1>
+        <div>
+          <ul>
+            <li>
+              Attributes
+              <ul>
+                <li>Allows 'fast' Insert or Delete items from both ends</li>
+                <li></li>
+              </ul>
+            </li>
+            <li>
+              C++
+              <ul>
+                <li><code>STL: std::deque</code></li>
+                <li>
+                  Typical implementations use a sequence of individually
+                  allocated fixed-size arrays.
+                </li>
+                <li>
+                  This means, for indexed access, two pointer dereferences are
+                  performed
+                </li>
+                <li>
+                  Operations: front, back, push_front, push_back, pop_front,
+                  pop_back
+                </li>
+                <li>Automatically expands/contracts</li>
+                <li>Random Access: O(1)</li>
+                <li>Insert/Delete (at end): O(1)</li>
+                <li>Insert/Delete (in middle): O(n)</li>
+              </ul>
+            </li>
+            <li>
+              Note
+              <ul>
+                <li></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h1>Priority Queue</h1>
+        <div>
+          <ul>
+            <li>
+              Attributes
+              <ul>
+                <li>
+                  Elements are added in a list (like Queue) in 'sorted' fashion
+                </li>
+                Every element has certain priority. Items are comparable.
+                <li>
+                  Usually implemented as heap (internal implementation). Heap
+                  are internally implemented as 'tree'.
+                </li>
+                <li>
+                  However, this implementation of tree-heap is special that it
+                  follows a property:
+                </li>
+                <li>
+                  Property is: Either the heap is 'max-heap' or 'min-heap'
+                </li>
+                <li>
+                  'max-heap': All parent nodes have higher value than its
+                  children
+                </li>
+                <li>
+                  'min-heap': All parent-nodes have smaller value than its
+                  children
+                </li>
+                <li>
+                  Construction : O(n), Polling (removing element) : O(logn),
+                  Peeking: O(1), Adding: O(logn)
+                </li>
+              </ul>
+            </li>
+            <li>
+              C++
+              <ul>
+                <li><code>STL: std::priority_queue</code></li>
+                <li>Main operations: top(), push(), pop()</li>
+              </ul>
+            </li>
+            <li>
+              Note
+              <ul>
+                <li>
+                  Operations: is_empty, insert_with_priority,
+                  pull_highest_priority_element
+                </li>
+              </ul>
+            </li>
+            <li>
+              Applications
+              <ul>
+                <li>Shortest path algorithm</li>
+                <li>Dynamically fetch 'next best' or 'next worst' element</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h1>Circular Queue</h1>
+        <div>
+          <ul>
+            <li>
+              Attributes
+              <ul>
+                <li>IMP: FIFO and Fixed Size</li>
+                <li>IMP: Effective use of space</li>
+                <li>FIFO as Queue</li>
+                <li>AKA Ring Buffer</li>
+                <li>AKA Cyclic Buffer</li>
+                <li>
+                  Uses fixed size buffer as if it were connected end to end
+                </li>
+                <li>Maintains two pointers, 1 at Head, 1 at Tail</li>
+                <li>When Head == Tail, Ring is EMPTY</li>
+                <li>When Head == Tail + 1, Ring is FULL</li>
+              </ul>
+            </li>
+            <li>
+              C++
+              <ul>
+                <li><code>boost::circular_buffer</code></li>
+              </ul>
+            </li>
+            <li>
+              Note
+              <ul>
+                <li>Useful in Producer-Consumer problem</li>
+                <li>
+                  In some cases - May choose to overwrite old data if consumer
+                  not able to keep-up (e.g. Audio Generator)
+                </li>
+              </ul>
+            </li>
+            <li>
+              My simple C++ implementation of:
+              <a
+                href="https://github.com/a1prashant/circular_buffer"
+                target="_blank"
+                >circular_buffer</a
+              >
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h1>Linked List</h1>
+        <div>
+          <ul>
+            <li>
+              Attributes
+              <ul>
+                <li>Dynamically allocated nodes</li>
+                <li>Maintains reference to next node in sequence</li>
+                <li>Variations:</li>
+                <li>(1) Singly: Points to next 1 node</li>
+                <li>(2) Doubly: Points to next and prev node</li>
+                <li>(3) Multiply (2+ references) linked list</li>
+                <li>(4) Circular linked list: Last node points to start</li>
+                <li>
+                  (5) Hash linking: Links are stored separately, but in same
+                  order as that of data-array.
+                </li>
+              </ul>
+            </li>
+            <li>
+              C++
+              <ul>
+                <li>Doubly Linked List: STL: <code>std::list</code></li>
+                <li>Circular Buffer: <code>boost::circular_buffer</code></li>
+              </ul>
+            </li>
+            <li>
+              Note
+              <ul>
+                <li>Easy insert/delete operations</li>
+                <li>
+                  Disadvantages, (1) need to traverse nodes to reach an element
+                </li>
+                <li>(2) incontiguously kept nodes, so Cache Misses are more</li>
+                <li>(3) Random access not possible</li>
+                <li>Length of LL is number of items in the list</li>
+                <li>
+                  To detect 'loop' - (a) put node addresses in Hash table and
+                  check Hashtable with every visit (b) Mark visited notes as
+                  visited (c) Floyd's cycle-finding algorithm - two pointers (X
+                  & Y) Move X by one and Y by 2. If X == Y then loop found
+                </li>
+                <li>http://cslibrary.stanford.edu/103/LinkedListBasics.pdf</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h1>Circular Linked List</h1>
+        <div>
+          <ul>
+            <li>
+              Attributes
+              <ul>
+                <li>
+                  There is no NULL at the end; last node is connected to first
+                  node
+                </li>
+                <li>
+                  Advantages: Can start traversing from any node; so efficient;
+                  and traverse till it doesn't revisit same node
+                </li>
+                <li>Can be used in round robin scheduling</li>
+                <li>Used by OS, in time sharing problem</li>
+              </ul>
+            </li>
+            <li>
+              C++
+              <ul>
+                <li><code></code></li>
+              </ul>
+            </li>
+            <li>
+              Note
+              <ul>
+                <li>
+                  To check if list is circular - start from Head, if iterator
+                  reaches null then its not circular, if it reaches Head the it
+                  is Circular list.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h1>Hash Table</h1>
+        <div>
+          <ul>
+            <li>
+              Attributes
+              <ul>
+                <li>
+                  Hash Table is Associative in nature (Index -> Data) as array
+                </li>
+                <li>Hash table uses 'hash function' to compute index</li>
+                <li>index points to array of 'buckets' or 'slots'</li>
+                <li>
+                  Hashing is a process of indexing and retrieving data elements.
+                </li>
+                <li>Hash Function: H(K), Converts big size Data to Hash Key</li>
+                <li>index = hash_function(key) % array_size</li>
+                <li>Data access is fast - irrespective of data-size</li>
+                <li>Helps to avoid 'non-linear' access time</li>
+                <li>There is a possibility to get collisions</li>
+                <li>
+                  collision resolution strategies are multiple. One such method
+                  is, to maintain linked-list (or BST etc) for (overflow) values
+                  at an index.
+                </li>
+              </ul>
+            </li>
+            <li>
+              C++
+              <ul>
+                <li>
+                  <code
+                    >STL: std::unordered_map, unordered_set, unordered_multiset,
+                    unordered_multimap</code
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              Note
+              <ul>
+                <li>Constant time operations O(1)</li>
+                <li>
+                  Hash functions are expected to be (1) fast and (2) minimize
+                  collisions
+                </li>
+                <li>
+                  CRC (cyclic redundancy checks) are one of the hash-functions
+                </li>
+                <li>
+                  MD-1/2/3/4/5/6 and SHA-1/256/512 are also hash functions.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h1>Heap</h1>
+        <div>
+          <ul>
+            <li>
+              Attributes
+              <ul>
+                <li>tree-based but with a property called 'heap property'</li>
+                <li>children are either 'greater' / 'lesser' than parent</li>
+                <li>
+                  if all parent nodes are 'greater' than their children, then
+                  its a max-heap
+                </li>
+                <li>
+                  if all parent nodes are 'lesser' than their children, then its
+                  a min-heap
+                </li>
+              </ul>
+            </li>
+            <li>
+              C++
+              <ul>
+                <li>
+                  <code
+                    >STL has: make_heap, push_heap, pop_heap algorithms</code
+                  >
+                </li>
+                <li>
+                  <code
+                    >STL has: std::priority_queue which is based on heap
+                    implementation</code
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              Note
+              <ul>
+                <li>Operations: insert, replace, find-max, delete etc</li>
+                <li>Insertion takes O(log (k) )</li>
+              </ul>
+            </li>
+            <li>
+              Applications
+              <ul>
+                <li>
+                  Heap sort, Priority Queue, Graph algorithms, min/max selection
+                  algorithms
+                </li>
+                <li>
+                  Example of a complete binary max-heap:
+                  <img src="img/heap.bmp"/>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h1>Tree</h1>
+        <div>
+          <ul>
+            <li>
+              Attributes
+              <ul>
+                <li>
+                  Hierarchical data-structure is collection of nodes (starting
+                  at a root node), where each parent node has 1 or more children
+                  and each children has only 1 (non-self) parent.
+                </li>
+              </ul>
+            </li>
+            <li>
+              C++
+              <ul>
+                <li><code></code></li>
+              </ul>
+            </li>
+            <li>
+              Note
+              <ul>
+                <li>
+                  Terminology: Node</b>, <b>Root</b>, <b>Parent</b>, <b>Child</b>, <b>Siblings</b> (nodes having
+                  same parent), <b>Neighbor</b> (parent or child), <b>Descendant/Sub-child
+                 </b> (nodes reachable from parent), <b>Ancestor</b> (nodes reachable from
+                  child to parent), <b>Leaf</b> (node with no children), <b>Degree</b> (number
+                  of children, for leaf degree zero), <b>Degree of tree</b> (degree of
+                  root), <b>Edge</b> (connection between two nodes), <b>Path</b> (sequence of
+                  nodes-edges connecting a node with a descendant), <b>Distance
+                 </b> (number of edges between two nodes), <b>Depth</b> (distance between a
+                  node and root), <b>Level</b> (1 + Depth), <b>Height</b> (number of eddges on
+                  the longest path between a node and a descendant leaf), <b>Width
+                 </b> (number of nodes on a level), <b>Breadth</b> (number of leaves), <b>
+                  Height of a tree</b> (height of root node), <b>Forest</b> (set of
+                  disjoint trees), <b>Sub-tree</b> (a node and all descendants of it), <b>
+                  Ordered Tree</b> (specific order for children is maintained), <b>Tree
+                  size</b> (number of nodes in the tree)
+                  </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h1>Binary Tree</h1>
+        <div>
+          <ul>
+            <li>
+              Attributes
+              <ul>
+                <li>Each node has utmost 2 children</li>
+                <li>At each level, ( 2 ^ level ) nodes possible</li>
+                <table>
+                  <tr>
+                    <th>Level</th>
+                    <th>Max nodes possible</th>
+                  </tr>
+                  <tr>
+                    <td>0 (at root)</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>4</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>8</td>
+                  </tr>
+                </table>
+                <li>max tree size = 2^(h+1) - 1</li>
+                <li>min tree size = h+1</li>
+              </ul>
+            </li>
+            <li>
+              C++
+              <ul>
+                <li><code></code></li>
+              </ul>
+            </li>
+            <li>
+              Note
+              <ul>
+                <li>Full/Proper/Strict Binary Tree: Each node either has 0 or 2 children</li>
+                <li>Perfect Binary Tree: All internal nodes have 2 children, all leaf nodes at same level</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h1>Binary Search Tree (BST)</h1>
+        <div>
+          <ul>
+            <li>
+              Attributes
+              <ul>
+                <li>Nodes are ordered / sorted</li>
+                <li>Each node has 2 subtrees</li>
+                <li>Items on left are smaller from parent</li>
+                <li>Items on right are right from parent</li>
+              </ul>
+            </li>
+            <li>
+              C++
+              <ul>
+                <li><code></code></li>
+              </ul>
+            </li>
+            <li>
+              Note
+              <ul>
+                <li></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h1>Red-Black Tree</h1>
+        <div>
+          <ul>
+            <li>
+              Attributes
+              <ul>
+                <li>These are special Binary Search Tree - these are Balanced Search Trees</li>
+                <li>Guaranteed height of O(log n)</li>
+                <li>A node is either red / black. Root and leaves (nil/leaf-node) always black.</li>
+                <li>If node is red, its children are black.</li>
+                <li>All paths from a node to its NIL descendants contain the same number of black nodes.</li>
+              </ul>
+            </li>
+            <li>
+              C++
+              <ul>
+                <li><code>STL's set, map, multimap, multiset</code></li>
+              </ul>
+            </li>
+            <li>
+              Note
+              <ul>
+                <li></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h1>Graph</h1>
+        <div>
+          <ul>
+            <li>
+              Attributes
+              <ul>
+                <li>Un-directional graph: </li>
+                <li>Directional graph: </li>
+                <li></li>
+              </ul>
+            </li>
+            <li>
+              C++
+              <ul>
+                <li><code></code></li>
+              </ul>
+            </li>
+            <li>
+              Note
+              <ul>
+                <li></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <aside>
+        <blockquote></blockquote>
+      </aside>
+    </article>
+    <div id="footer-placeholder"></div>
+  </body>
+</html>

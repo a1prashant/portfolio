@@ -1,0 +1,87 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="script/local.js"></script>
+</head>
+
+<body>
+  <div id="nav-placeholder"></div>
+
+  <article>
+    <header>
+      <h1>Minimum YAML</h1>
+      <div id="page-wip-placeholder"></div>
+    </header>
+    <section>
+      <div class="code">
+        <pre>
+        --- # start of document
+        ... # end of document
+        # comment
+        # also multi-line comment
+        name: value
+        some_other_key: some other value.
+        [ list, items, are, like, this ]
+        fruits: [ apple, banana, mango ]
+        veggies: # key : value
+          - tomato
+          - potato
+          # Not so favorite
+          - onion
+        # Another topic
+        ---
+        current_address: &caddr
+          type : home
+          lines: |
+            flat no 2, building D,
+            OurApartment
+          city: Pune
+          pin: 411007
+        shipping_address: *caddr
+        date : 2021-05-24
+        total: 123.50
+        instruction: >
+            From the entrance take 2nd right.
+            Backup contact Mr XYZ.
+            Or call my phone.
+        ---
+        canonical: 12345
+        decimal: +12,345
+        octal: 014
+        hexadecimal: 0x0C
+        canonical: 1.23456e+3
+        exponential: 12.3456e+02
+        fixed: 1,234.56
+        negative infinity: -.inf
+        not_a_number: .NaN
+        ---
+        null: ~
+        true: y
+        false: n
+        string: '12345'
+        ---
+        item:
+          - name: ABC
+            type: toy
+            price: 12.34
+          - name: XYZ
+            type: utility
+            price: 43.56
+        ---
+        </pre>
+
+        validate YAML: http://www.yamllint.com/
+
+      </div>
+    </section>
+    <aside>
+      <blockquote>TODO:</blockquote>
+    </aside>
+  </article>
+  <div id="footer-placeholder"></div>
+</body>
+
+</html>

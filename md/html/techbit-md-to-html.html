@@ -1,0 +1,55 @@
+<h1>Markdown to HTML</h1>
+<h2>Background</h2>
+<p>For my portfolio site, it was becoming very cumbersome to write the matter in HTML. Using the converters was too not an easy solution.
+Now I created a solution to convert the <strong>markdown</strong> to <strong>HTML</strong> and then to embed it inside my wrapper HTML which has <strong>&lt; head &gt;</strong> and <em>tail</em> of the <strong>&lt; body &gt;</strong>.  Making good use of 'placeholder' technique to rightly place the embedded HTML.
+All of what I is been said in this document is already implemented as part of the portfolio project itself. You can take a look.</p>
+<hr />
+<h2>Installation</h2>
+<ul>
+<li>markdown</li>
+<li>python3</li>
+<li>yaml</li>
+</ul>
+<p>On Mac,</p>
+<p><code>brew install markdown</code>
+it's man-page: <a href="https://linux.die.net/man/1/markdown">markdown</a></p>
+<p>And I used a python based setup script, which I run after every change to <strong>.md</strong> files so as to convert them in HTML.</p>
+<p>To keep things flexible, used a configuration file in yaml.</p>
+<p><code>pip install pyyaml</code></p>
+<hr />
+<h2>Reading YAML Configuration</h2>
+<p>My current configuration file is <a href="../config.yaml">here</a>.
+Code for reading the yaml file is simple:</p>
+<p><code>def read_config():
+    with open("config.yaml") as file:
+        try:
+            global config
+            config = yaml.safe_load(file)
+        except yaml.YAMLError as exc:
+            print(exc)</code></p>
+<p>As I am using the config variable in many other functions made it global.</p>
+<hr />
+<h2>Process of conversion from Markdown to HTML</h2>
+<p>There are many steps I took to make it suit my particular setup, however, in general if you have to do it there is really one basic step, as mentioned in following code-snippet:</p>
+<hr />
+<h3>Basic command to convert markdown to HTML-Code</h3>
+<p><code>cmd = "markdown " + dir_src_md + "/" + file + " &gt; " + gen_fname_path
+run_cmd(cmd)</code></p>
+<p>thus for one of the files, it runs and shows the command as:
+<code>$ markdown md/techbit-md-to-html.md &gt; md/html/techbit-md-to-html.html</code></p>
+<hr />
+<h3>Embed generated HTML-Code in a proper HTML file</h3>
+<p>The generated HTML-Code is not complete. It doesn't have <strong>&lt; HEAD &gt;</strong> or <strong>&lt; BODY &gt;</strong> tags.
+To solve that I created a template HTML file, see <a href="../template-techbit-.html">template-techbit-.html</a></p>
+<p>Template HTML file has:
+```</p>
+<div id="placeholder-md-"></div>
+<p>```
+This is replaced by the 'setup.py' with the respective 'title' of the '.md' file.
+And a 'script/gen/placeholder.js' file is created automatically with the same 'id'.
+With the help of 'script/gen/placeholder.js' a newly created (generated with 'markdown' command) 'md/html/?????.html' is loaded.</p>
+<p>And thats it!</p>
+<hr />
+<h2>Next?</h2>
+<p>I think there should have been a better solution that this. But for now this is what I can think of.
+The use of this approach for my specific project is fine. I can create '.md' (markdown) files and automatically created HTML files that have my standard header and footer.</p>

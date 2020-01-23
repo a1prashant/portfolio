@@ -1,0 +1,248 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="script/local.js"></script>
+</head>
+
+<body>
+  <div id="nav-placeholder"></div>
+
+  <article>
+    <header>
+      <h1>Automotive Domain</h1>
+      <div id="page-wip-placeholder"></div>
+    </header>
+    <section>
+      <nav>
+        <ul>
+          <li>Self-Driving Cars</li>
+          <li>ADAS and AD</li>
+          <li>ROS</li>
+          <li>Autosar</li>
+          <li>Classic Autosar</li>
+          <li>Adaptive Autosar</li>
+          <li>ARA (Autosar Runtime for Adaptive Applications</li>
+          <li>Some/IP (Scalable service-Oriented MiddlewarE over IP</li>
+          <li></li>
+          <li>IDL (Interface Definition Language)</li>
+          <li>FUSA ISO 26262</li>
+        </ul>
+      </nav>
+    </section>
+    <section>
+      <header>Self-Driving Cars</header>
+      <div>
+        <p>
+          Society of Autonomous Vehicles identifies 6 levels:
+        <ul>
+          <li>level-0: Driver controls the vehicle. The steering, the throttle, break and all other controls of the
+            vehicle.</li>
+          <li>level-1: Driver Assistance Level. Driver must be fully engaged. Vehicle supports driver for either
+            Steering or
+            Acceleration. e.g. cruise control.</li>
+          <li>level-2: Partial Automation. Vehicle does few functions automatically, but driver still must be engaged.
+            e.g. Automatic Cruise Control, Automatic Lane Keeping</li>
+          <li>level-3: Conditional Automation. Vehicle drives autonomously, but Driver MUST take over whenever
+            necessary.</li>
+          <li>level-4: High Automation - No human interference. May not have steering wheel, break, throttle. Vehicle
+            controls all functions autonomously but within
+            certain Geofence.</li>
+          <li>level-5: Full Automation. Anywhere and everywhere in drivable area.</li>
+        </ul>
+        </p>
+      </div>
+    </section>
+    <section>
+      <header>ROS (Robotic Operating System)</header>
+      <div>
+        <p>
+          https://www.ros.org/ is not a operating system, but actually is a
+          middleware. It is a collection of many libraries, tools. It enables
+          collaborative style of software development. They say
+          <strong>ROS = Plumbing + Tools + Capabilities + Ecosystem.</strong>
+        </p>
+        <p>By design ROS is distributed and moduler.</p>
+        <p>ROS comprises of majorly 3 parts:</p>
+        <dl>
+          <dt>(1) Communication infrastructure</dt>
+          <dd>- Publish/Scribe anonymous mesage passing</dd>
+          <dd>- Recording and playback of messages</dd>
+          <dd>- Remote Procedure Calls</dd>
+          <dd>- Distributed Parameter System</dd>
+          <dt>(2) Robot-specific Features</dt>
+          <dd>- Standard Message Definitions for Robots</dd>
+          <dd>- Robot Geometry Library</dd>
+          <dd>- Robot Description Language</dd>
+          <dd>- Preemptable Remote Procedure Calls</dd>
+          <dd>- Diagnostics</dd>
+          <dd>- Pose Estimation</dd>
+          <dd>- Localization</dd>
+          <dd>- Mapping</dd>
+          <dd>- Navigation</dd>
+          <dt>(3) Tools</dt>
+          <dd>-</dd>
+        </dl>
+      </div>
+    </section>
+    <section>
+      <header>Autosar</header>
+      <div></div>
+      <div>
+        <p>AUTomotive Open System ARchitecture (AUTOSAR) is developed by <i>automobile manufacturers and vendors,
+            suppliers, service providers and companies from automotive electronics, semiconductor and software</i>
+          together
+          in order to standardize the development of vehicle software. Before AUTOSAR every manufacturer and vendors
+          used to create their own version of software and its features, interfaces were not compatible with each other.
+          With standardization of the architecture and the interfaces each vendor, manufacturer can develop, integrate
+          the sub-systems, and build on top of each others works without much thinking of compatibility. Modifications,
+          upgrade and update becomes easy. It targets increased reuse and exchangibility of SW modules between OEMs and
+          suppliers.
+        </p>
+        <p>Before AUTOSAR, traditional approach,
+          <code>
+          <br>[- Application Software -]
+          <br>[------- Software -------]
+          <br>[------- Hardware -------]
+        </code>
+        <p>After AUTOSAR
+          <code>
+            <br>[--- Application Software --]
+            <br>[- Standardized Middleware -]
+            <br>[-- Standardized Basic SW --]
+            <br>[---- Hardware Specific ----]
+            <br>[-------- Hardware ---------]
+          </code>
+        <p>Thus benefits,
+        <ul>
+          <li>HW and SW - widely independent of each other</li>
+          <li>Development can be decoupled, so reduced time and costs</li>
+          <li>Reuse of SW, enhanced quality and efficiency</li>
+        </ul>
+        </p>
+        </p>
+        </p>
+      </div>
+    </section>
+    <section>
+      <header>ASIL - Automotive Safety Integrity Level</header>
+      <div>Risk Classification System defined by ISO 26262 for functional safety</div>
+      <ol>
+        <li>Depending on (i) Severity (ii) Exposure (iii) Controllability</li>
+        <li>4 levels are defined A, B, C and D</li>
+        <li>A is lowest</li>
+        <li>D is Highest</li>
+        <li>For instance</li>
+        <li>- Rear Lights is ASIL-A</li>
+        <li>- Break Lights is ASIL-B</li>
+        <li>- Headlights is ASIL-B</li>
+        <li>- Engine Management is ASIL-C to ASIL-D</li>
+        <li>- AirBag is ASIL-D</li>
+        <li>- Electric Power Steering is ASIL-D</li>
+      </ol>
+      <div>It helps in (i) establishing safety measurements to migrate risks to acceptable levels. (ii) Managing,
+        Tracking safety requirements (iii) Ensures standardized procedures are followed</div>
+    </section>
+    <section>
+      <header></header>
+      <div>From Service Interface Definition, two parts are created (i) Service Proxy (ii) Service Skeleton. Proxy is
+        used by the Client Application and Skeleton is used by Service Application.</div>
+    </section>
+    <section>
+      <header>Classic Autosar</header>
+      <div></div>
+    </section>
+    <section>
+      <header>Adaptive Autosar</header>
+      <div></div>
+    </section>
+    <section>
+      <header>ARA (Autosar Runtime for Adaptive Applications</header>
+      <div></div>
+    </section>
+    <section>
+      <header>IDL (Interface Definition Language)</header>
+      <div></div>
+    </section>
+    <section>
+      <header>Functional Safety (FUSA)</header>
+      <h3>Motivation</h3>
+      <p>
+        accidents occure, injuries to lives of people, damage to physical
+        systems, harm to nature, loss of business
+      </p>
+      <p>Cause, relying on a system that is possibly not safe-system</p>
+      <h3>Safety</h3>
+      <p>
+        Risks are always there. but Safety is Absence of unreasonable risk.
+      </p>
+      <h3>Vocabulary</h3>
+      <p>Harm: injury, damage</p>
+      <p>Hazard: Potential source of harm</p>
+      <p>Hazardous Event: Hazardous situation that result in harm</p>
+      <p>
+        Risk: Probability + Severity of a potential harm (High/Medium/Low)
+      </p>
+      <p>Safety: No unacceptable risk.</p>
+      <p>Safety Function: Function to keep 'safe state'</p>
+      <p>Safe State: operating mode without unreasonable level of risk</p>
+      <p>
+        Safety Integrity: Integrity level that safety function would perform
+      </p>
+      <h3>Reliability Vs Safety</h3>
+      <p>
+        Reliable: Doesn't fail in certain timespan, May lead to hazard if
+        fails
+      </p>
+      <p>
+        Safe System: May fail in certain timespan, but still be in safe state.
+        Do NOT result in (1) Injury to inside and out outside persons (2)
+        Least damage
+      </p>
+      <h3>Active Safety Vs Passive Safety</h3>
+      <p>Active Safety: Continuously checks for safety</p>
+      <p>Passive Safety: Waits for external trigger to check safety</p>
+      <h3>Security Vs Safety</h3>
+      <p>Secure need not be safe.</p>
+      <p>
+        Secure will give protection against attack but cannot guarantee
+        Safety. e.g. If accident cause breathing impossible, then even if it
+        is Secure from attack, it is NOT safe.
+      </p>
+      <h3>Faults</h3>
+      <p>Random: Mainly due to Hardware failure</p>
+      <p>
+        Systematic: Mainly, Design flaws, Can be found during verification
+        stage
+      </p>
+      <p>Common: Two or more systems fail because of 1 fault.</p>
+      <h3>Safety System</h3>
+      <p>Typically: 'fault' --> 'Failure' --> 'Hazard'</p>
+      <p>
+        Safe: 'Find fault before failure', 'If failure occurs, before hazard
+        achieve safe state
+      </p>
+      <h3>ISO 26262 Development Process</h3>
+      <ul>
+        <li>Part-1: Vocabulary</li>
+        <li>Part-2: Management of Functional Safety</li>
+        <li>Part 3-7: Safety Life Cycle</li>
+        <li>Part 8: Supporting Processes</li>
+        <li></li>
+      </ul>
+      <div></div>
+    </section>
+    <section>
+      <header></header>
+      <div></div>
+    </section>
+    <aside>
+      <blockquote>TODO:</blockquote>
+    </aside>
+  </article>
+  <div id="footer-placeholder"></div>
+</body>
+
+</html>

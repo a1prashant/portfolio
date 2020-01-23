@@ -1,0 +1,34 @@
+author: Prashant Prabodh
+
+md-to-html:
+  src-dir: md
+  gen-dir: md/html
+  template-techbit-html: template-techbit-.html
+  placeholder:
+    id: placeholder-md-
+    file: script/gen-src/placeholder.js
+    script: |
+      $(function () {{
+        $("#placeholder-md-{}").load("{}");
+      }});
+
+plantuml:
+  py_commands: |
+    import os, shutil
+
+    source_dir = "plantuml/uml-relations"
+
+    command = f"java -jar ~/Downloads/plantuml.jar {source_dir}/*.plantuml"
+    print( "executing: " + command)
+
+    res = os.system(command)
+    print( "returned: " + res)
+
+    target_dir = "img/uml-relations"
+    if not os.path.exists(target_dir):
+      os.makedirs(target_dir)
+
+    for file_name in file_names:
+      shutil.move(os.path.join(source_dir, file_name), target_dir)
+
+    - "mv plantuml/uml-relations/*.png img/uml-relations/."

@@ -1,0 +1,347 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="script/local.js"></script>
+</head>
+
+<body>
+  <div id="nav-placeholder"></div>
+
+  <article>
+    <h1>Design Thoughts</h1>
+    <section>
+      <ul>
+        <li>Principles</li>
+        <li>Design Patterns</li>
+        <li>SOLID Principles</li>
+      </ul>
+      <div id="page-wip-placeholder"></div>
+    </section>
+    <section>
+      <div>
+        <h3>Design Thoughts</h3>
+        <h5>Manage Change</h5>
+        <ol>
+          <li>Separate changing and non-changing aspects from your application</li>
+          <li>"encapsulate" the varying things so it won't affect the rest of your code</li>
+          <li>This will also add flexibility</li>
+        </ol>
+      </div>
+      <div>
+        <h5>Add Abstraction</h5>
+        <ol>
+          <li>Bind to an interface and not to an implementation</li>
+          <li>Means, program to a super-type</li>
+          <li>and then assign the implementation at runtime/delayed</li>
+        </ol>
+      </div>
+      <div>
+        <h5>HAS-A is better than IS-A</h5>
+        <ol>
+          <li>Favor Composition over inheritance</li>
+          <li>It helps you change behavior at runtime</li>
+        </ol>
+      </div>
+      <div>
+        <h5>Loose Coupling</h5>
+        <ol>
+          <li>strive to have loose coupling between two objects that interact</li>
+          <li>increases reuse</li>
+          <li>Importantly - change in one doesn't affect the other</li>
+        </ol>
+      </div>
+      <div>
+        <h5>Open-Close Principle</h5>
+        <ol>
+          <li>Classes should be open for extension but closed for modifications</li>
+        </ol>
+      </div>
+      <div>
+        <h5>Depend on</h5>
+        <ol>
+          <li>Depend on Abstraction; not on concrete classes</li>
+        </ol>
+      </div>
+
+    </section>
+
+
+    <section>
+      <div>
+        <h5>Strategy Pattern AKA Policy Pattern</h5>
+        <ol>
+          <li>Behavioral pattern</li>
+          <li>Selects an algorithm (from family of algorithms) at runtime</li>
+          <li>Subject has a behavior</li>
+          <li>Behavior is coded as interface</li>
+          <li>There is setBehavior to set the concreate behavior at runtime</li>
+        </ol>
+      </div>
+      <div>
+        <h5>Observer</h5>
+        <ol>
+          <li>Publisher and Subscriber</li>
+          <li>best example, newspaper subscription</li>
+          <li>register/deregister for a subject</li>
+          <li>this adds/removes as an observer for that subject</li>
+          <li>All observers get notified of any change</li>
+          <li>The Observer pattern defines 1-to-many relationship</li>
+          <li>Change in State of Subject is notified to all its dependents</li>
+          <li>important is to know when the state has changed. Its an event.</li>
+        </ol>
+      </div>
+      <div>
+        <h5>Decorator</h5>
+        <ol>
+          <li>attaches additional responsibility to an object dynamically</li>
+          <li>provides flexible alternative to subclassing for extending functionality</li>
+          <li>Decorators have same supertype as the objects they decorate</li>
+          <li>There can be 1+ decorators to wrap an object</li>
+          <li>Given that decorator has same supertype as the object it decorates, we can pass around a decorated object
+            instead of the original one.</li>
+        </ol>
+      </div>
+      <div>
+        <h5>Factory</h5>
+        <ol>
+          <li>Creational pattern</li>
+          <li>Creation of objects is separated from main (or user) code</li>
+          <li>new objects can be created using a common interface</li>
+        </ol>
+        <div class="code">
+          <pre>
+struct Factory { 
+  static Product create(Type type) {
+    switch(type) {
+      case Type::A: return Product_A(); break;
+      case Type::B: return Product_B(); break;
+    }
+  }
+};
+// client code
+Product product = Factory.Create(x_type);
+        </pre>
+        </div>
+      </div>
+      <div>
+        <h5>Factory Method</h5>
+        <ol>
+          <li></li>
+        </ol>
+        <div class="code">
+          <pre>
+struct BaseFactory {
+  static Product getProduct() { return create(); }
+  Product create() = 0;
+};
+struct Factory_A : BaseFactory {
+  Product_A create() { return new Product_A(); }
+};
+struct Factory_B : BaseFactory {
+  Product_B create() { return new Product_B(); }
+};
+// client code
+Factory f = new Factory_A();
+Product p = f.getProduct();
+        </pre>
+        </div>
+      </div>
+      <div>
+        <h5>Abstract Factory Method</h5>
+        <ol>
+          <li></li>
+        </ol>
+        <div class="code">
+          <pre>
+struct Product { virtual void func() = 0; };
+struct Product_A : Product { void func() { ... } };
+struct Product_B : Product { void func() { ... } };
+
+struct Factory { virtual void create() = 0; };
+struct Factory_A { virtual void create() { return new Product_A(); } };
+struct Factory_B { virtual void create() { return new Product_B(); } };
+
+struct Client {
+  Factory * factory_;
+  Client( Factory * factory ) : factory_(factory) { }
+  void do_something() { ... factory->create(); ... }
+};
+main() {
+  Factory * pf = new Factory_B();
+  Client c = Client(pf);
+  c->do_something();
+}
+        </pre>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div>
+        <h1>SOLID Principles</h1>
+        <ol>
+          <li>S - Single-Responsibility Principle</li>
+          <li>O - Open-Close Principle</li>
+          <li>L - Liskov Substitution Principle</li>
+          <li>I - Interface Segregation Principle</li>
+          <li>D - Dependency Inversion Principle</li>
+        </ol>
+        <div>
+          <h5>Single Responsibility Principle</h5>
+          <p>Every module or class should have single part of the functionality</p>
+          <p>Below code is invalid as per this principle. DisplayScore should not take the responsibility of validating
+            the score.</p>
+          <table>
+            <th class="danger">Bad</th>
+            <th class="good">Good</th>
+            <tr>
+              <td>
+                <div class="code">
+                  <pre>
+struct DisplayScore {
+  void display() {
+    // ...
+  }
+  bool isValid() {
+    // ...
+  }
+};
+                  </pre>
+                </div>
+              </td>
+              <td>
+                <div class="code">
+                  <pre>
+struct DisplayScore { void display() { ... } };
+struct ValiateScore { void validate() { ... } };
+                </pre>
+                </div>
+              </td>
+            </tr>
+          </table>
+          Another example, if a class is doing (a) opening DB (b) fetching records (c) saving to file. Then there are 3
+          reasons for which the class will undergo changes e.g. new DB added, changes in queries, change in
+          serialization type etc.
+        </div>
+        <div>
+          <h5>Open-Close Principle</h5>
+          <ol>
+            <li>Class should be open for extension and closed for modifications</li>
+            <li>One should be able to extend a class’s behavior easily, without modifying it</li>
+            <li>That means one should create new classes for extending functionality; and not modify existing classes
+            </li>
+          </ol>
+          <table>
+            <th class="danger">Bad</th>
+            <th class="good">Good</th>
+            <tr>
+              <td>
+                <div class="code">
+                  <pre>
+struct AreaCalculator {
+  Shape * shape;
+  ...
+  int area() {
+    if( shape->name == "Circle" ) { ... }
+    else if( shape->name == "square" ) { ... }
+    else if( shape->name == "triangle" ) { ... }
+  }
+}
+                </pre>
+                </div>
+              </td>
+              <td>
+                <div class="code">
+                  <pre>
+struct Shape { virtual int area() = 0; }
+struct Circle { int area() { ... } }
+struct Square { int area() { ... } }
+struct Triangle { int area() { ... } }
+struct AreaCalculator {
+  int getArea() {
+    return shape->area();
+  }
+}
+                </pre>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div>
+          <h5>Liskov-Substitution Principle</h5>
+          <ol>
+            <li>Substitutability!</li>
+            <li>subclasses should satisfy expectations of clients accessing superclass</li>
+            <li>When used, </li>
+            <li> - it should NOT say method-not-found error</li>
+            <li> - also behavior should NOT change</li>
+            <li>What it means is - Abstraction has to be mentioned for all necessary interfaces</li>
+            <li>And subclassing should NOT alter the basic intention from what interface expects</li>
+          </ol>
+          <p>All circles are ellipses (where they have major and minor axis equal). So if we make Circle subclass of
+            Ellipse then it will WORK for few methods like area(), but if the client of Ellipse tries to use API
+            setXAxis() or setYAxis() with different values then the substitution with Circle cannot result in right
+            expected behavior.</p>
+        </div>
+      </div>
+      <div>
+        <h5>Interface Segregation Principle</h5>
+        <ol>
+          <li>No client should be forced to depend on methods it does not use</li>
+          <li>mean - Classes should be specialized (with fine grained interfaces)</li>
+          <li>NO god class</li>
+          <li>If client doesn't need an interface from group of interfaces then for them probably a separate class is to
+            be created</li>
+        </ol>
+        <table>
+          <th class="danger">Bad</th>
+          <th class="good">Good</th>
+          <tr>
+            <td>
+              <div class="code">
+                <pre>
+struct Shape {
+  virtual int area() = 0;
+  virtual int volume() = 0;
+};
+              </pre>
+              </div>
+            </td>
+            <td>
+              <div class="code">
+                <pre>
+struct 2DShape {
+  virtual int area() = 0;
+};
+struct 3DShape {
+  virtual int volume() = 0;
+};
+              </pre>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <h5>Dependency Inversion Principle</h5>
+        <ol>
+          <li>Depend on abstraction; not on implementation</li>
+          <li>Classes from higher-domain-level should not invoke details of lower-domain-level classes</li>
+          <li>example,</li>
+          <li>- Do NOT solder lamp to the electric wiring</li>
+          <li>- Use an electric socket</li>
+          <li>So - in other words</li>
+          <li>- higher and lower modules should depend on abstraction</li>
+          <li>- Abstraction should not depend on details</li>
+          <li>- details shouold depend on abstraction</li>
+        </ol>
+      </div>
+    </section>
+  </article>
+  <div id="footer-placeholder"></div>
+</body>
+
+</html>

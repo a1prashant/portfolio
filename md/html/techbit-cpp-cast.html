@@ -1,0 +1,54 @@
+<h1>C++ cast</h1>
+<ol>
+<li>static_cast</li>
+<li>when implicit casting is possible
+    &gt; <code>int x = static_cast&lt;int&gt;(3.14);</code></li>
+<li>when convertors are available
+    &gt; <code>Box b = static_cast&lt;Box&gt;("10,20,30");</code></li>
+<li>related down-cast or up-cast
+    &gt; <code>Base * bp = static_cast&lt;Base*&gt;(new Derived());</code></li>
+<li>inverse of implicit conversion
+    &gt; <code>int * np = static_cast&lt; int* &gt;( void_ptr_x );</code></li>
+<li>enum to int
+    &gt; <code>int one = static_cast&lt;int&gt;( ENUM_NUMBERS );</code></li>
+<li>int to enum
+    &gt; <code>ENUM_NUMBER n = static_cast&lt;ENUM_NUMBERS&gt;( one );</code></li>
+<li>
+<p>enum to another enum
+    &gt; <code>ARABIC_NUMBERS an = static_cast&lt; ARABIC_NUMBERS &gt;( enumbers );</code></p>
+</li>
+<li>
+<p>dynamic_cast</p>
+</li>
+<li>only on pointers or references</li>
+<li>for polymorphic types</li>
+<li>specially used for downcast
+    &gt; <code>Derived *pd = dynamic_cast&lt; Derived* &gt;( basePtr );</code></li>
+<li>does run-time check if down-cast succeeds
+    &gt; <code>if( Derived * pd = dynamic_cast &lt; Derived* &gt;( basePtr ) ) { /// success, can use pd }</code></li>
+<li>
+<p>can be used to add 'const'ness</p>
+</li>
+<li>
+<p>const_cast</p>
+</li>
+<li>cast away the constness or volatility
+<code>int h = 10;
+    const int &amp;o = h;
+    const_cast&lt;int &amp;&gt;(o) = 20;</code></li>
+<li>works on pointers and references only</li>
+<li>destination-type also has to be of same type</li>
+<li>
+<p>BUT, if the value itself is 'const' then result is undefined
+<code>const int ci = 4;
+    int * pi = const_cast&lt; int* &gt;( &amp;ci );
+    // cannot use pi to modify value, undefined behavior</code></p>
+</li>
+<li>
+<p>reinterpret_cast</p>
+</li>
+<li>only for pointers and references</li>
+<li>from any type to any other type of pointer</li>
+<li>reinterprets types from the bit pattern
+    &gt; <code>int i = 10; char* p = reinterpret_cast&lt; char* &gt;( i );</code></li>
+</ol>

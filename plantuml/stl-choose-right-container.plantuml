@@ -1,0 +1,27 @@
+@startuml
+start
+if ( need order? ) is (yes) then
+    if (LIFO?) is (yes) then
+        #lightblue : stack;
+        kill
+    else (no)
+        if (FIFO?) is (yes) then
+            #lightpink : queue;
+            kill
+        else (no)
+            if (Best In, First Out) is (yes) then
+                #LightCoral : priority_queue;
+                kill
+            else (no)
+                if (insert-or-erase-in-middle?) is (yes) then 
+                else (no)
+                    
+                endif
+            endif
+        endif
+    endif
+else (no)
+    : something;
+endif
+stop
+@enduml

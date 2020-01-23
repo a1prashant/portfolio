@@ -1,0 +1,22 @@
+<h1>C++ Smart pointers</h1>
+<h1>unique_ptr</h1>
+<ul>
+<li>owns a object</li>
+<li>dispose of the owned object when goes out-of-scope</li>
+<li>Create using: <code>auto p = std::make_unique&lt;Shape&gt;();</code></li>
+<li>Transfer ownership using <code>auto q = std::move(p);</code></li>
+<li>Follows runtime polymorphism <code>std::unique_ptr&lt;Base&gt; p = std::make_unique&lt;Derived&gt;();</code></li>
+<li>custom lambda-expression deleter <code>std::unique_ptr&lt;D, void(*)(D*)&gt; p(new D, [](D * dp) { delete dp; } );</code></li>
+<li>Arrays of it, <code>std::unique_ptr&lt;A[]&gt; p(new A[5]);</code> This will create 5 elements, and when p goes out of scope it will call destructor for all 5 elements.</li>
+</ul>
+<h1>shared_ptr</h1>
+<ul>
+<li>multiple shared_ptr can have shared ownership an object <code>auto p = std::make_shared&lt;U&gt;();</code></li>
+<li>object is destroyed when the last remaining shared_ptr is destroyed</li>
+<li>a reference count is maintained. With every extra share count is increased, and with every release of the ownership the counter is decreased.</li>
+</ul>
+<h1>weak_ptr</h1>
+<ul>
+<li>non-owning reference to an object which is managed by shared_ptr. The weak_ptr must be converted to 'shared_ptr' before accessing the object - using 'lock' function' <code>std::weak_ptr&lt;U&gt; wp; std::shared_ptr&lt;U&gt; sp = std::make_shared&lt;U&gt;(); wp = sp; if( auto sp2 = wp.lock()) { use with sp2 } else { wp is expired }</code></li>
+<li>use function 'use_count()' to check the count.</li>
+</ul>

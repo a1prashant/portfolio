@@ -1,0 +1,81 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="script/local.js"></script>
+</head>
+
+<body>
+  <div id="nav-placeholder"></div>
+
+  <div id="page-wip-placeholder"></div>
+  <article>
+    <header>
+      <h1>Rule of 0, 3, 5</h1>
+      <p></p>
+    </header>
+    <!-- nav>
+        <ul>
+          <li>Table</li>
+        </ul>
+      </nav -->
+    <section>
+      <header>Rule of 0, 3, 5</header>
+      <h3><strong>Move Symantics</strong></h3>
+      <div>
+        <div><strong>Motive: </strong></div>
+        <ol style="list-style-type: lower-roman;">
+          <li>Avoid expensive deep copy.</li>
+          <li>
+            Reuse memory allocated for temporary variables (e.g. rvalue).
+          </li>
+        </ol>
+        <div>Before we begin:</div>
+        <div>&nbsp;</div>
+        <div>let's understand:</div>
+        <div><strong>Rule of 0:</strong></div>
+        <div>
+          Better to avoid defining any of above mentioned member functions.
+        </div>
+        <div>&nbsp;</div>
+        <div><strong>Rule of 3:</strong></div>
+        <div>
+          If a class requires any of following, it is certain that it will
+          require all 3.
+        </div>
+        <ol>
+          <li>copy constructor</li>
+          <li>copy assignment operator</li>
+          <li>destructor</li>
+        </ol>
+        <div>
+          If a class does not provide any then default implementation will be
+          provided by the compiler.
+        </div>
+        <div>&nbsp;</div>
+        <div><strong>Rule of 5:</strong></div>
+        <div>
+          Any class for which move semantics are desired, it will need to
+          define all 5 special functions
+        </div>
+        <div>Above mentioned 3 + following 2.</div>
+        <ol>
+          <li>4) move-constructor</li>
+          <li>5) move assignment operator</li>
+        </ol>
+        <div>&nbsp;</div>
+        <div><strong>copy-and-swap idiom</strong></div>
+        <p>TODO:</p>
+      </div>
+      <footer></footer>
+    </section>
+    <aside>
+      <blockquote>TODO:</blockquote>
+    </aside>
+  </article>
+  <div id="footer-placeholder"></div>
+</body>
+
+</html>

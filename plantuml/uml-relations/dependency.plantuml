@@ -1,0 +1,6 @@
+@startuml
+interface foo 
+classA ..> foo
+
+classA : - method() { foo(); }
+@enduml
