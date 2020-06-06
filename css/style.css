@@ -1,0 +1,93 @@
+.top-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.top-nav ul > li {
+  float: left;
+}
+
+.top-nav ul > li > a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.top-nav ul > li > a:hover {
+  background-color: #111;
+}
+
+section {
+  border: 1px solid aqua;
+  margin: 5;
+  padding: 5;
+  background-color: cornsilk;
+}
+
+section > h3 {
+  text-align: center;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer {
+  margin: auto;
+  text-align: center;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  /* width: 25%; */
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {
+  margin: 0 -5px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+section > ol > li > ol > li {
+  list-style-type: lower-alpha;
+}
+
+/* Responsive columns */
+/* @media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+} */
+
+/* Style the counter cards */
+/* .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color:coral;
+} */ */

@@ -1,0 +1,559 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="script/local.js"></script>
+  </head>
+  <body>
+    <div id="nav-placeholder"></div>
+
+    <article>
+      <header>
+        <h1>Data Structures (DS)</h1>
+        <p>DS is methods of organizing data for effective use</p>
+      </header>
+      <section>
+        <h1>Array</h1>
+        <div>
+          <ul>
+            <li>
+              Attributes
+              <ul>
+                <li>Has size</li>
+                <li>Contiguous, Sequencial</li>
+                <li>Of same type</li>
+                <li>Easy to find Position</li>
+                <li>Index based</li>
+              </ul>
+            </li>
+            <li>
+              C++
+              <ul>
+                <li><code>array[index]</code></li>
+                <li><code>STL: std::array</code></li>
+              </ul>
+            </li>
+            <li>
+              Note
+              <ul>
+                <li>Bound checking is important</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h1>Stack</h1>
+        <div>
+          <ul>
+            <li>
+              Attributes
+              <ul>
+                <li>Last In, First Out (LIFO) or First In, Last Out (FILO)</li>
+                <li>Insertion and Deletion from one end only.</li>
+                <li>Maintains reference to top of the stack.</li>
+                <li>Push, Pop operations</li>
+                <li>Check Empty or (occasionally, Check Full) operations</li>
+              </ul>
+            </li>
+            <li>
+              C++
+              <ul>
+                <li><code>STL: std::stack</code></li>
+              </ul>
+            </li>
+            <li>
+              Note
+              <ul>
+                <li>Stack unwinding concept, Stack overflow concepts</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h1>Queue</h1>
+        <div>
+          <ul>
+            <li>
+              Attributes
+              <ul>
+                <li>First In, First Out (FIFO), First come first serve</li>
+                <li>Insertion from one end, removal from other end.</li>
+                <li>Maintains front and back of the queue.</li>
+              </ul>
+            </li>
+            <li>
+              C++
+              <ul>
+                <li><code>STL: std::queue</code></li>
+                <li><code>TODO: MENTION INTERNAL IMPL AS, OF THESE</code></li>
+              </ul>
+            </li>
+            <li>
+              Note
+              <ul>
+                <li>
+                  Operations: front, back, push at end, pop from front, empty
+                </li>
+                <li>Implementation: Deque, Priority Queue, Circular Queue</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h1>Deque: Double Ended Queue</h1>
+        <div>
+          <ul>
+            <li>
+              Attributes
+              <ul>
+                <li>Insert or Delete items from both ends</li>
+                <li></li>
+              </ul>
+            </li>
+            <li>
+              C++
+              <ul>
+                <li><code>STL: std::deque</code></li>
+              </ul>
+            </li>
+            <li>
+              Note
+              <ul>
+                <li></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h1>Priority Queue</h1>
+        <div>
+          <ul>
+            <li>
+              Attributes
+              <ul>
+                <li>
+                  Elements are added in a list (like Queue) in 'sorted' fashion
+                </li>
+                <li></li>
+              </ul>
+            </li>
+            <li>
+              C++
+              <ul>
+                <li><code>STL: std::priority_queue</code></li>
+              </ul>
+            </li>
+            <li>
+              Note
+              <ul>
+                <li>
+                  Operations: is_empty, insert_with_priority,
+                  pull_highest_priority_element
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h1>Circular Queue</h1>
+        <div>
+          <ul>
+            <li>
+              Attributes
+              <ul>
+                <li>IMP: FIFO and Fixed Size, Effective use of space</li>
+                <li>FIFO as like Queue</li>
+                <li>AKA Ring Buffer</li>
+                <li>AKA Circular Buffer</li>
+                <li>AKA Cyclic Buffer</li>
+                <li>
+                  Uses fixed size buffer as if it were connected end to end
+                </li>
+              </ul>
+            </li>
+            <li>
+              C++
+              <ul>
+                <li><code></code></li>
+              </ul>
+            </li>
+            <li>
+              Note
+              <ul>
+                <li>Useful in Producer-Consumer problem</li>
+                <li>
+                  In some cases - May choose to overwrite old data if consumer
+                  not able to keep-up (e.g. Audio Generator)
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h1>Linked List</h1>
+        <div>
+          <ul>
+            <li>
+              Attributes
+              <ul>
+                <li>Dynamically allocated nodes</li>
+                <li>Maintains reference to next node in sequence</li>
+                <li>Variations:</li>
+                <li>(1) Singly: Points to next 1 node</li>
+                <li>(2) Doubly: Points to next and prev node</li>
+                <li>(3) Multiply (2+ references) linked list</li>
+                <li>(4) Circular linked list: Last node points to start</li>
+                <li>
+                  (5) Hash linking: Links are stored separately, but in same
+                  order as that of data-array.
+                </li>
+              </ul>
+            </li>
+            <li>
+              C++
+              <ul>
+                <li>Doubly Linked List: STL: <code>std::list</code></li>
+                <li>Circular Buffer: <code>boost::circular_buffer</code></li>
+              </ul>
+            </li>
+            <li>
+              Note
+              <ul>
+                <li>Easy insert/delete operations</li>
+                <li>
+                  Disadvantages, (1) need to traverse nodes to reach an element
+                </li>
+                <li>(2) incontiguously kept nodes, so Cache Misses are more</li>
+                <li>(3) Random access not possible</li>
+                <li>Length of LL is number of items in the list</li>
+                <li>
+                  To detect 'loop' - (a) put node addresses in Hash table and
+                  check Hashtable with every visit (b) Mark visited notes as
+                  visited (c) Floyd's cycle-finding algorithm - two pointers (X
+                  & Y) Move X by one and Y by 2. If X == Y then loop found
+                </li>
+                <li>http://cslibrary.stanford.edu/103/LinkedListBasics.pdf</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h1>Circular Linked List</h1>
+        <div>
+          <ul>
+            <li>
+              Attributes
+              <ul>
+                <li>
+                  There is no NULL at the end; last node is connected to first
+                  node
+                </li>
+                <li>
+                  Advantages: Can start traversing from any node; so efficient;
+                  and traverse till it doesn't revisit same node
+                </li>
+                <li>Can be used in round robin scheduling</li>
+                <li>Used by OS, in time sharing problem</li>
+              </ul>
+            </li>
+            <li>
+              C++
+              <ul>
+                <li><code></code></li>
+              </ul>
+            </li>
+            <li>
+              Note
+              <ul>
+                <li>
+                  To check if list is circular - start from Head, if iterator
+                  reaches null then its not circular, if it reaches Head the it
+                  is Circular list.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h1>Hashing</h1>
+        <div>
+          <ul>
+            <li>
+              Attributes
+              <ul>
+                <li>
+                  Hashing is a process of indexing and retrieving data elements.
+                </li>
+                <li>
+                  Hash Table is Associative in nature (Index -> Data) as array
+                </li>
+                <li>Hash Function: H(K), Converts big size Data to Hash Key</li>
+                <li>Data access is fast - irrespective of data-size</li>
+                <li></li>
+                <li></li>
+              </ul>
+            </li>
+            <li>
+              C++
+              <ul>
+                <li><code>STL: std::unordered_map</code></li>
+              </ul>
+            </li>
+            <li>
+              Note
+              <ul>
+                <li>Constant time operations O(1)</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h1>Heap</h1>
+        <div>
+          <ul>
+            <li>
+              Attributes
+              <ul>
+                <li></li>
+                <li></li>
+              </ul>
+            </li>
+            <li>
+              C++
+              <ul>
+                <li><code></code></li>
+              </ul>
+            </li>
+            <li>
+              Note
+              <ul>
+                <li></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h1>Matrix</h1>
+        <div>
+          <ul>
+            <li>
+              Attributes
+              <ul>
+                <li></li>
+                <li></li>
+              </ul>
+            </li>
+            <li>
+              C++
+              <ul>
+                <li><code></code></li>
+              </ul>
+            </li>
+            <li>
+              Note
+              <ul>
+                <li></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h1>Tree</h1>
+        <div>
+          <ul>
+            <li>
+              Attributes
+              <ul>
+                <li></li>
+                <li></li>
+              </ul>
+            </li>
+            <li>
+              C++
+              <ul>
+                <li><code></code></li>
+              </ul>
+            </li>
+            <li>
+              Note
+              <ul>
+                <li></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h1>Graph</h1>
+        <div>
+          <ul>
+            <li>
+              Attributes
+              <ul>
+                <li></li>
+                <li></li>
+              </ul>
+            </li>
+            <li>
+              C++
+              <ul>
+                <li><code></code></li>
+              </ul>
+            </li>
+            <li>
+              Note
+              <ul>
+                <li></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h1>Binary Tree</h1>
+        <div>
+          <ul>
+            <li>
+              Attributes
+              <ul>
+                <li></li>
+                <li></li>
+              </ul>
+            </li>
+            <li>
+              C++
+              <ul>
+                <li><code></code></li>
+              </ul>
+            </li>
+            <li>
+              Note
+              <ul>
+                <li></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h1>Binary Search Tree (BST)</h1>
+        <div>
+          <ul>
+            <li>
+              Attributes
+              <ul>
+                <li></li>
+                <li></li>
+              </ul>
+            </li>
+            <li>
+              C++
+              <ul>
+                <li><code></code></li>
+              </ul>
+            </li>
+            <li>
+              Note
+              <ul>
+                <li></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h1>Red-Black Tree</h1>
+        <div>
+          <ul>
+            <li>
+              Attributes
+              <ul>
+                <li></li>
+                <li></li>
+              </ul>
+            </li>
+            <li>
+              C++
+              <ul>
+                <li><code></code></li>
+              </ul>
+            </li>
+            <li>
+              Note
+              <ul>
+                <li></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h1>K Dimentional Tree</h1>
+        <div>
+          <ul>
+            <li>
+              Attributes
+              <ul>
+                <li></li>
+                <li></li>
+              </ul>
+            </li>
+            <li>
+              C++
+              <ul>
+                <li><code></code></li>
+              </ul>
+            </li>
+            <li>
+              Note
+              <ul>
+                <li></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h1>Binary Search Tree</h1>
+        <div>
+          <ul>
+            <li>
+              Attributes
+              <ul>
+                <li></li>
+                <li></li>
+              </ul>
+            </li>
+            <li>
+              C++
+              <ul>
+                <li><code></code></li>
+              </ul>
+            </li>
+            <li>
+              Note
+              <ul>
+                <li></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <aside>
+        <blockquote></blockquote>
+      </aside>
+    </article>
+    <div id="footer-placeholder"></div>
+  </body>
+</html>
