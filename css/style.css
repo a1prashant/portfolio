@@ -35,8 +35,10 @@ section {
   box-shadow: lightseagreen;
 }
 
-section > h3 {
-  text-align: center;
+table,
+th,
+td {
+  border: 1px solid black;
 }
 
 img {
@@ -49,6 +51,7 @@ footer {
   margin: auto;
   text-align: center;
 }
+
 * {
   box-sizing: border-box;
 }
@@ -81,5 +84,5 @@ a.button {
 }
 
 section > ol > li > ol > li {
-  list-style-type: lower-alpha;
+  list-style-type: upper-roman;
 }
