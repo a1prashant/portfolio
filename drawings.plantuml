@@ -1,0 +1,60 @@
+@startsalt
+something
+{
+    ^"My group box"
+  Login    | "MyName   "
+  Password | "****     "
+  [Cancel] | [  OK   ]
+}
+@endsalt
+
+
+@startuml
+package "Sensor Interface" {
+  [GPS] as GPS
+  rectangle " " as GRP {
+    [IMU]
+    [AHRC]
+    [Sensors]
+  }
+  [CAMERA] as CAMERA
+  [LIDAR] as LIDAR
+}
+package "Perception" {
+  GPS --> [Localization]
+  [Vehicle state Estimation] as VSE
+  [Localization] --> VSE
+  GRP --> VSE : Odometry
+  [Object Detection] as OD
+  LIDAR --> OD : lazer use
+  [Computer Vision] as CV
+  CAMERA --> CV
+  LIDAR --> VSE
+  [Sensor Fusion] as SF
+  VSE --> SF
+  OD --> SF
+  CV --> SF : Object Classification
+}
+package "Behavior and Control" {
+  [Moving Object Tracking] as MOT
+  SF --> MOT
+  rectangle " " as MOM {
+    [Mission Planner] as MP
+    [Map] as MAP
+    [Path Planner] as PP
+    [Longitudinal Motion Planner] as LMP
+  }
+  MOT --> MOM : Moving Object List
+  [Vehicle Control] as VC
+  PP --> VC : Road Model, Lane Keep, Collision Avoid
+  LMP --> VC : Control Strategy
+  [Steering] as STEERING
+  [Acceleration] as ACC
+  VC --> STEERING
+  VC --> ACC
+}
+package "Actuators" {
+  STEERING --> [Steering Interface]
+  ACC --> [Brake/Gear, Accelerator Interface]
+}
+@enduml

@@ -1,0 +1,64 @@
+body {
+  font-family: "Raleway";
+  font-size: 20px;
+}
+
+section {
+  border: 1px solid orange;
+  margin: 5;
+  padding: 5;
+  background-color: cornsilk;
+  box-shadow: lightseagreen;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer {
+  margin: auto;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a.button {
+  background-color: #4caf50;
+  border: tomato;
+  border-style: solid;
+  appearance: button;
+  padding: 2px 2px;
+}
+
+.topic {
+  border: 1px solid lightcoral;
+}
+
+.column {
+  float: left;
+  padding: 0 10px;
+}
+
+.row {
+  margin: 0 -5px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+section > ol > li > ol > li {
+  list-style-type: upper-roman;
+}
