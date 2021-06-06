@@ -31,8 +31,8 @@ img {
   box-sizing: border-box;
 }
 
-a.button {
-  background-color: #4caf50;
+label.page_wip {
+  background-color: yellow;
   border: tomato;
   border-style: solid;
   appearance: button;
