@@ -37,15 +37,21 @@
       <div>
         <p>
           Society of Autonomous Vehicles identifies 6 levels:
-          <br />level-0: Driver controls the vehicle. The steering, the throttle, break and all other controls of the
-          vehicle.
-          <br />level-1: Driver Assistance Level. Vehicle supports driver for either Steering or Acceleration. e.g.
-          cruise
-          control.
-          <br />level-2:
-          <br />level-3:
-          <br />level-4:
-          <br />level-5:
+        <ul>
+          <li>level-0: Driver controls the vehicle. The steering, the throttle, break and all other controls of the
+            vehicle.</li>
+          <li>level-1: Driver Assistance Level. Driver must be fully engaged. Vehicle supports driver for either
+            Steering or
+            Acceleration. e.g. cruise control.</li>
+          <li>level-2: Partial Automation. Vehicle does few functions automatically, but driver still must be engaged.
+            e.g. Automatic Cruise Control, Automatic Lane Keeping</li>
+          <li>level-3: Conditional Automation. Vehicle drives autonomously, but Driver MUST take over whenever
+            necessary.</li>
+          <li>level-4: High Automation - No human interference. May not have steering wheel, break, throttle. Vehicle
+            controls all functions autonomously but within
+            certain Geofence.</li>
+          <li>level-5: Full Automation. Anywhere and everywhere in drivable area.</li>
+        </ul>
         </p>
       </div>
     </section>
@@ -81,8 +87,45 @@
         </dl>
       </div>
     </section>
-    <header>Autosar</header>
-    <div></div>
+    <section>
+      <header>Autosar</header>
+      <div></div>
+      <div>
+        <p>AUTomotive Open System ARchitecture (AUTOSAR) is developed by <i>automobile manufacturers and vendors,
+            suppliers, service providers and companies from automotive electronics, semiconductor and software</i>
+          together
+          in order to standardize the development of vehicle software. Before AUTOSAR every manufacturer and vendors
+          used to create their own version of software and its features, interfaces were not compatible with each other.
+          With standardization of the architecture and the interfaces each vendor, manufacturer can develop, integrate
+          the sub-systems, and build on top of each others works without much thinking of compatibility. Modifications,
+          upgrade and update becomes easy. It targets increased reuse and exchangibility of SW modules between OEMs and
+          suppliers.
+        </p>
+        <p>Before AUTOSAR, traditional approach,
+          <code>
+          <br>[- Application Software -]
+          <br>[------- Software -------]
+          <br>[------- Hardware -------]
+        </code>
+        <p>After AUTOSAR
+          <code>
+            <br>[--- Application Software --]
+            <br>[- Standardized Middleware -]
+            <br>[-- Standardized Basic SW --]
+            <br>[---- Hardware Specific ----]
+            <br>[-------- Hardware ---------]
+          </code>
+        <p>Thus benefits,
+        <ul>
+          <li>HW and SW - widely independent of each other</li>
+          <li>Development can be decoupled, so reduced time and costs</li>
+          <li>Reuse of SW, enhanced quality and efficiency</li>
+        </ul>
+        </p>
+        </p>
+        </p>
+      </div>
+    </section>
     <section>
       <header>Classic Autosar</header>
       <div></div>
