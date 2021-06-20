@@ -1,0 +1,89 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+  <script src="script/local.js"></script>
+</head>
+
+<body>
+  <div id="nav-placeholder"></div>
+
+  <div id="page-wip-placeholder"></div>
+  <article>
+    <header>
+      <h1>C++ Smart Pointers</h1>
+      <p></p>
+    </header>
+    <!-- nav>
+        <ul>
+          <li>Table</li>
+        </ul>
+      </nav -->
+    <section>
+      <header>Passing Smart Pointers to function</header>
+      <br />
+      <div>
+        for <code>std::unique_ptr</code>:
+        <code>
+
+        <pre class="prettyprint">
+  void by_value(std::unique_ptr < Employee > p) {
+    // ...
+  }
+  void by_ref( std::unique_ptr< Employee > & p ) {
+    // ...
+    p.reset( new Employee() );
+    // ...
+  }
+
+  int main(){
+    auto p = std::make_unique< Employee >();
+
+    by_value( std::move(p) );    // (1) OK
+    by_value( p );               // (2) ERROR - Cannot make Copy
+
+    auto q = std::make_unique< Employee >();
+    by_ref( q )                  // OK
+    by_ref( std::move ( q ) );   // ERROR - rvalue to non-const lvalue reference NOT OK
+  }
+        </pre>
+        </code>
+      </div>
+      <div>
+        for <code>std::shared_ptr</code>:
+        <code>
+
+        <pre class="prettyprint">
+  // intention is to part-own;
+  void shared_pass_by_value(std::shared_ptr < Employee > p) { // ref count incremented
+    // ...
+  } // ref count decreased
+
+  // possibly will re-seat the shared-pointer
+  void shared_by_ref( std::shared_ptr< Employee > & p ) {
+    // ...
+    p.reset( new Employee() );
+    // ...
+  }
+
+  // only alias; so ref count not incremented
+  void shared_by_const_ref( const std::shared_ptr< Employee > & p ) {
+    // ...
+  }
+        </pre>
+        </code>
+      </div>
+      <footer></footer>
+    </section>
+    <aside>
+      <blockquote>TODO:</blockquote>
+    </aside>
+  </article>
+  <div id="footer-placeholder"></div>
+</body>
+
+</html>
