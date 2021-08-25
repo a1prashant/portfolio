@@ -1,6 +1,7 @@
 body {
   font-family: "Raleway";
   font-size: 20px;
+  background-color: azure;
 }
 
 section {
@@ -81,6 +82,14 @@ label.page_wip {
 
 .top-nav ul > li > a:hover {
   background-color: #111;
+}
+
+.code {
+  background-clip: border-box;
+  border: 6px ridge darkgray;
+  background-color:lightsteelblue;
+  padding-left: 20px;
+  font-family: 'Courier New', Courier, monospace ;
 }
 
 /*--- Footer ---*/

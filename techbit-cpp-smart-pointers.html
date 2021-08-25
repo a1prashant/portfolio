@@ -29,7 +29,7 @@
       <div>
         for <code>std::unique_ptr</code>:
         <code>
-
+          <div class="code">
         <pre class="prettyprint">
   void by_value(std::unique_ptr < Employee > p) {
     // ...
@@ -51,11 +51,13 @@
     by_ref( std::move ( q ) );   // ERROR - rvalue to non-const lvalue reference NOT OK
   }
         </pre>
+          </div>
         </code>
       </div>
       <div>
         for <code>std::shared_ptr</code>:
         <code>
+          <div class="code">
 
         <pre class="prettyprint">
   // intention is to part-own;
@@ -75,6 +77,7 @@
     // ...
   }
         </pre>
+        </div>
         </code>
       </div>
       <footer></footer>

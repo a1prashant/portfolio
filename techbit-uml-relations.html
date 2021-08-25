@@ -1,0 +1,197 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="script/local.js"></script>
+</head>
+
+<body>
+  <div id="nav-placeholder"></div>
+
+  <article>
+    <header>
+      <h1>UML Relationships</h1>
+      <div id="page-wip-placeholder"></div>
+    </header>
+    <section>
+      <ol>
+        <li>
+          <h3>Dependency</h3>
+          <table width="100%">
+            <td>
+              <ul>
+                <li>[A] depends on [B] for certain function</li>
+                <li>weakest relationship</li>
+                <li>indicates loose coupling between two classes</li>
+              </ul>
+            </td>
+            <td>
+              <div class="code">
+                <pre>
+classA objA;
+ClassB objB;
+objB = SomeFunc( objA );
+// or
+class ChecksumValidator raises InvalidChecksumException</div>
+                </pre>
+            </td>
+            <td>
+              <img src="img/uml-relations/dependency.png"> </img>
+            </td>
+          </table>
+        </li>
+        <li>
+          <h3>Association (USES)</h3>
+          <table width="100%">
+            <td>
+              <ul>
+                <li>[A] uses [B]</li>
+                <li>stronger relationship than Dependency</li>
+                <li>indicates one or two way communication</li>
+                <li>direction of communication indicated by an arrow</li>
+                <li>no-arrow means two-way navigation</li>
+                <li>can be a named-association or unnamed</li>
+                <li>example</li>
+              </ul>
+            </td>
+            <td>
+              <div class="code">
+                <pre>
+car.addPassenger( personA );
+...
+car.dropPassenger( personA );
+// or
+
+class B {
+  ...
+};
+
+class A {
+  B * b_ptr;
+};
+                </pre>
+              </div>
+            </td>
+            <td><img src="img/uml-relations/association.png"> </img></td>
+          </table>
+        </li>
+        <li>
+          <h3>Aggregation (PART-OF / HAS-A)</h3>
+          <table width="100%">
+            <td>
+              <ul>
+                <li>[A] is "part of" [B]</li>
+                <li>however, [B] can exist without instantiating [A]</li>
+                <li>can be bi-directional (like Association)</li>
+                <li>If the "containing-object" is destroyed, the "contained-object" is destroyed with it</li>
+              </ul>
+            </td>
+            <td>
+              <div class="code">
+                <pre>
+class A {
+   ...
+};
+
+class B {
+  A * pA;
+};
+                </pre>
+              </div>
+            </td>
+            <td><img src="img/uml-relations/aggregation.png"> </img></td>
+          </table>
+        </li>
+        <li>
+          <h3>Composition (HAS-A)</h3>
+          <table width="100%">
+            <td>
+              <ul>
+                <li>[A] is "part of" [B]</li>
+                <li>howeve, [B] cannot exist without instantiating [A]</li>
+                <li>is a STRONGEST relationship</li>
+                <li>Lifetime association and exclusive containment</li>
+                <li>If the "containing-object" is destroyed, the "contained-object" is destroyed with it</li>
+              </ul>
+            </td>
+            <td>
+              <div class="code">
+                <pre>
+class Human {
+  class Hand { ... };
+};
+Human aPerson;
+                  </pre>
+              </div>
+            </td>
+            <td><img src="img/uml-relations/composition.png"></img></td>
+          </table>
+        </li>
+        <li>
+          <h3>Generalization (IS-A)</h3>
+          <table width="100%">
+            <td>
+              <ul>
+                <li>[A] "is-a-superclass-of" [B]</li>
+                <li>[A] "is-a-generalization-of" subclass-[B]</li>
+              </ul>
+            </td>
+            <td>
+              <div class="code">
+                <pre>
+class A {
+  ...
+};
+
+class B : public A {
+  ...
+};
+                </pre>
+              </div>
+            </td>
+            <td><img src="img/uml-relations/generalization.png"></img></td>
+          </table>
+        </li>
+        <li>
+          <h3>Realization (EXTENDS)</h3>
+          <table width="100%">
+            <td>
+              <ul>
+                <li>[A] "implements interfaces offered by" [B]</li>
+                <li>Implementer provides concrete methods.</li>
+              </ul>
+            </td>
+            <td>
+              <div class="code">
+                <pre>
+class A {
+  void draw() = 0;
+};
+
+class B : class A {
+  void draw() {
+    ...
+ }
+};
+                </pre>
+              </div>
+            </td>
+            <td><img src="img/uml-relations/realization.png"></img></td>
+          </table>
+        </li>
+      </ol>
+    </section>
+    <section>
+      <header></header>
+      <div></div>
+    </section>
+    <aside>
+      <blockquote></blockquote>
+    </aside>
+  </article>
+  <div id="footer-placeholder"></div>
+</body>
+
+</html>

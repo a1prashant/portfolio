@@ -1,0 +1,10 @@
+@startuml
+class Heart
+
+class Human {
+    Heart heart
+}
+
+Human *-- Heart 
+
+@enduml
