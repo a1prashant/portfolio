@@ -1,0 +1,19 @@
+author: Prashant SG
+
+md-to-html:
+  src-dir: md
+  gen-dir: md/html
+  template-techbit-html: template-techbit-.html
+  placeholder:
+    id: placeholder-md-
+    file: script/gen/placeholder.js
+    script: |
+      $(function () {{
+        $("#placeholder-md-{}").load("{}");
+      }});
+plantuml:
+  src-dir: plantuml/
+  gen-dir: img/
+  uml-relations:
+    src-dir: plantuml/uml-relations
+    gen-dir: img/uml-relations
