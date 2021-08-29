@@ -12,8 +12,7 @@ md-to-html:
         $("#placeholder-md-{}").load("{}");
       }});
 plantuml:
-  src-dir: plantuml/
-  gen-dir: img/
-  uml-relations:
-    src-dir: plantuml/uml-relations
-    gen-dir: img/uml-relations
+  commands:
+    - "java -jar ~/Downloads/plantuml.jar plantuml/uml-relations/*.plantuml"
+    - "mkdir img/uml-relations"
+    - "mv plantuml/uml-relations/*.png img/uml-relations/."

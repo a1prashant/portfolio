@@ -26,8 +26,7 @@ def md_to_html():
             gen_html_file = topic + ".html"
             gen_fname_path = os.path.join(dir_gen_html, gen_html_file)
             cmd = "markdown " + dir_src_md + "/" + file + " > " + gen_fname_path
-            print("$ " + cmd)
-            ret = os.system(cmd)
+            run_cmd(cmd)
             template_to_full_html(topic, gen_html_file, gen_fname_path)
 
 
@@ -63,5 +62,20 @@ def template_to_full_html(topic, filename, content_file):
                 print(line, end="")
 
 
+def plantuml_to_png():
+    global plantuml_config
+    plantuml_config = config["plantuml"]
+    commands = plantuml_config["commands"]
+    for cmd in commands:
+        run_cmd(cmd)
+
+
+def run_cmd(cmd):
+    print("$ " + cmd)
+    ret = os.system(cmd)
+    print(": returned=", ret)
+
+
 call_fn(read_config)
 call_fn(md_to_html)
+call_fn(plantuml_to_png)
