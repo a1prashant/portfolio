@@ -11,6 +11,7 @@ md-to-html:
       $(function () {{
         $("#placeholder-md-{}").load("{}");
       }});
+
 plantuml:
   commands:
     - "java -jar ~/Downloads/plantuml.jar plantuml/uml-relations/*.plantuml"

@@ -90,6 +90,15 @@ label.page_wip {
   background-color:lightsteelblue;
   padding-left: 20px;
   font-family: 'Courier New', Courier, monospace ;
+  font-size: large
+}
+
+.danger {
+  background-color: red;
+}
+
+.good {
+  background-color: green;
 }
 
 /*--- Footer ---*/

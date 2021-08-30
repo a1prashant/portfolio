@@ -111,65 +111,71 @@
           <li>Creation of objects is separated from main (or user) code</li>
           <li>new objects can be created using a common interface</li>
         </ol>
-        <pre>
-          struct Factory { 
-            static Product create(Type type) {
-              switch(type) {
-                case Type::A: return Product_A(); break;
-                case Type::B: return Product_B(); break;
-              }
-            }
-          };
-          // client code
-          Product product = Factory.Create(x_type);
+        <div class="code">
+          <pre>
+struct Factory { 
+  static Product create(Type type) {
+    switch(type) {
+      case Type::A: return Product_A(); break;
+      case Type::B: return Product_B(); break;
+    }
+  }
+};
+// client code
+Product product = Factory.Create(x_type);
         </pre>
+        </div>
       </div>
       <div>
         <h5>Factory Method</h5>
         <ol>
           <li></li>
         </ol>
-        <pre>
-          struct BaseFactory {
-            static Product getProduct() { return create(); }
-            Product create() = 0;
-          };
-          struct Factory_A : BaseFactory {
-            Product_A create() { return new Product_A(); }
-          };
-          struct Factory_B : BaseFactory {
-            Product_B create() { return new Product_B(); }
-          };
-          // client code
-          Factory f = new Factory_A();
-          Product p = f.getProduct();
+        <div class="code">
+          <pre>
+struct BaseFactory {
+  static Product getProduct() { return create(); }
+  Product create() = 0;
+};
+struct Factory_A : BaseFactory {
+  Product_A create() { return new Product_A(); }
+};
+struct Factory_B : BaseFactory {
+  Product_B create() { return new Product_B(); }
+};
+// client code
+Factory f = new Factory_A();
+Product p = f.getProduct();
         </pre>
+        </div>
       </div>
       <div>
         <h5>Abstract Factory Method</h5>
         <ol>
           <li></li>
         </ol>
-        <pre>
-          struct Product { virtual void func() = 0; };
-          struct Product_A : Product { void func() { ... } };
-          struct Product_B : Product { void func() { ... } };
+        <div class="code">
+          <pre>
+struct Product { virtual void func() = 0; };
+struct Product_A : Product { void func() { ... } };
+struct Product_B : Product { void func() { ... } };
 
-          struct Factory { virtual void create() = 0; };
-          struct Factory_A { virtual void create() { return new Product_A(); } };
-          struct Factory_B { virtual void create() { return new Product_B(); } };
+struct Factory { virtual void create() = 0; };
+struct Factory_A { virtual void create() { return new Product_A(); } };
+struct Factory_B { virtual void create() { return new Product_B(); } };
 
-          struct Client {
-            Factory * factory_;
-            Client( Factory * factory ) : factory_(factory) { }
-            void do_something() { ... factory->create(); ... }
-          };
-          main() {
-            Factory * pf = new Factory_B();
-            Client c = Client(pf);
-            c->do_something();
-          }
+struct Client {
+  Factory * factory_;
+  Client( Factory * factory ) : factory_(factory) { }
+  void do_something() { ... factory->create(); ... }
+};
+main() {
+  Factory * pf = new Factory_B();
+  Client c = Client(pf);
+  c->do_something();
+}
         </pre>
+        </div>
       </div>
     </section>
     <section>
@@ -188,26 +194,30 @@
           <p>Below code is invalid as per this principle. DisplayScore should not take the responsibility of validating
             the score.</p>
           <table>
-            <th>Bad</th>
-            <th>Good</th>
+            <th class="danger">Bad</th>
+            <th class="good">Good</th>
             <tr>
               <td>
-                <pre>
-  struct DisplayScore {
-    void display() {
-      // ...
-    }
-    bool isValid() {
-      // ...
-    }
-  };
+                <div class="code">
+                  <pre>
+struct DisplayScore {
+  void display() {
+    // ...
+  }
+  bool isValid() {
+    // ...
+  }
+};
                   </pre>
+                </div>
               </td>
               <td>
-                <pre>
-  struct DisplayScore { void display() { ... } };
-  struct ValiateScore { void validate() { ... } };
+                <div class="code">
+                  <pre>
+struct DisplayScore { void display() { ... } };
+struct ValiateScore { void validate() { ... } };
                 </pre>
+                </div>
               </td>
             </tr>
           </table>
@@ -224,34 +234,38 @@
             </li>
           </ol>
           <table>
-            <th>Bad</th>
-            <th>Good</th>
+            <th class="danger">Bad</th>
+            <th class="good">Good</th>
             <tr>
               <td>
-                <pre>
-  struct AreaCalculator {
-    Shape * shape;
-    ...
-    int area() {
-      if( shape->name == "Circle" ) { ... }
-      else if( shape->name == "square" ) { ... }
-      else if( shape->name == "triangle" ) { ... }
-    }
+                <div class="code">
+                  <pre>
+struct AreaCalculator {
+  Shape * shape;
+  ...
+  int area() {
+    if( shape->name == "Circle" ) { ... }
+    else if( shape->name == "square" ) { ... }
+    else if( shape->name == "triangle" ) { ... }
   }
+}
                 </pre>
+                </div>
               </td>
               <td>
-                <pre>
-  struct Shape { virtual int area() = 0; }
-  struct Circle { int area() { ... } }
-  struct Square { int area() { ... } }
-  struct Triangle { int area() { ... } }
-  struct AreaCalculator {
-    int getArea() {
-      return shape->area();
-    }
+                <div class="code">
+                  <pre>
+struct Shape { virtual int area() = 0; }
+struct Circle { int area() { ... } }
+struct Square { int area() { ... } }
+struct Triangle { int area() { ... } }
+struct AreaCalculator {
+  int getArea() {
+    return shape->area();
   }
+}
                 </pre>
+                </div>
               </td>
             </tr>
           </table>
@@ -283,26 +297,30 @@
             be created</li>
         </ol>
         <table>
-          <th>Bad</th>
-          <th>Good</th>
+          <th class="danger">Bad</th>
+          <th class="good">Good</th>
           <tr>
             <td>
-              <pre>
-  struct Shape {
-    virtual int area() = 0;
-    virtual int volume() = 0;
-  };
+              <div class="code">
+                <pre>
+struct Shape {
+  virtual int area() = 0;
+  virtual int volume() = 0;
+};
               </pre>
+              </div>
             </td>
             <td>
-              <pre>
-  struct 2DShape {
-    virtual int area() = 0;
-  };
-  struct 3DShape {
-    virtual int volume() = 0;
-  };
+              <div class="code">
+                <pre>
+struct 2DShape {
+  virtual int area() = 0;
+};
+struct 3DShape {
+  virtual int volume() = 0;
+};
               </pre>
+              </div>
             </td>
           </tr>
         </table>
