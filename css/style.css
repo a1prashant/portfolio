@@ -88,7 +88,10 @@ label.page_wip {
   background-clip: border-box;
   border: 6px ridge darkgray;
   background-color:lightsteelblue;
+  white-space:inherit;
   padding-left: 20px;
+  display: block;
+  white-space: pre;
   font-family: 'Courier New', Courier, monospace ;
   font-size: large
 }
