@@ -84,7 +84,7 @@ label.page_wip {
   background-color: #111;
 }
 
-.code {
+code, .code {
   background-clip: border-box;
   border: 6px ridge darkgray;
   background-color:lightsteelblue;
