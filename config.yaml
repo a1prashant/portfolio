@@ -6,7 +6,7 @@ md-to-html:
   template-techbit-html: template-techbit-.html
   placeholder:
     id: placeholder-md-
-    file: script/gen/placeholder.js
+    file: script/gen-src/placeholder.js
     script: |
       $(function () {{
         $("#placeholder-md-{}").load("{}");
