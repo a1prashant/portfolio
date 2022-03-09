@@ -3,6 +3,9 @@
 import yaml
 import os, shutil
 import fileinput
+import markdown
+
+# import './auto_create_plantuml_imgs.py'
 
 
 def call_fn(fn):
@@ -25,8 +28,14 @@ def md_to_html():
             topic, f_ext = os.path.splitext(file)
             gen_html_file = topic + ".html"
             gen_fname_path = os.path.join(dir_gen_html, gen_html_file)
-            cmd = "markdown " + dir_src_md + "/" + file + " > " + gen_fname_path
-            run_cmd(cmd)
+            # Following is commented, as on Windows not possible to get 'markdown' cli
+            # cmd = "markdown " + dir_src_md + "/" + file + " > " + gen_fname_path
+            # run_cmd(cmd)
+            with open(dir_src_md + "/" + file, "r", encoding="utf-8") as input_file:
+                text = input_file.read()
+            html = markdown.markdown(text)
+            with open(gen_fname_path, "w", encoding="utf-8", errors="xmlcharrefreplace") as output_file:
+                output_file.write(html) 
             template_to_full_html(topic, gen_html_file, gen_fname_path)
 
 
@@ -65,7 +74,7 @@ def template_to_full_html(topic, filename, content_file):
 def plantuml_to_png():
     global plantuml_config
     plantuml_config = config["plantuml"]
-    commands = plantuml_config["commands"]
+    commands = plantuml_config["py_commands"]
     for cmd in commands:
         run_cmd(cmd)
 
@@ -75,6 +84,8 @@ def run_cmd(cmd):
     ret = os.system(cmd)
     print(": returned=", ret)
 
+import sys
+print(sys.path)
 
 call_fn(read_config)
 call_fn(md_to_html)

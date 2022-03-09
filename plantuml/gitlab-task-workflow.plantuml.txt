@@ -1,0 +1,17 @@
+@startuml
+title "Task Workflow"
+state ProductBacklog {
+[*] --> Issue : Create Issue
+}
+state Sprint_Backlog {
+    Issue --> TODO : Prioritization
+    TODO --> WIP : Work in \nProgress
+    WIP --> TODO : If needs \nmore clarity
+    WIP --> Deferred : If delayed
+    Deferred --> WIP : If delay resolved
+    WIP --> To_Be_Reviewed : DOD, AC are met
+    To_Be_Reviewed --> Closed : After all \nreview comments \nare addressed
+    To_Be_Reviewed --> WIP : Rework after\nReview comments
+}
+
+@enduml

@@ -1,0 +1,42 @@
+<h1>GIT Branching Strategy</h1>
+<h2>Background</h2>
+<p>For a single project, when there multiple teammates are making changes to the source-code; it is required to maintain some strategies so that developers are able to organize their and their teammate's parallel development.</p>
+<p>Following are some list of recommendations, drawn with experience and references of few sites:</p>
+<h2>recommendations:</h2>
+<ol>
+<li>Educate each developer with use of <code>git</code></li>
+<li>Use 'Trunk based' git flow strategy</li>
+<li>Small, simple changes: fewer merge conflicts, easy to code review, encourages pull requests, simpler to ship; faster velocity</li>
+<li>Keep the 'main' branch protected</li>
+<li>Strict completion or DOD (definition of done) policies</li>
+<li><code>main</code> branch will always have production-ready code</li>
+<li>Enforce code reviews: least for <code>main</code>, <code>release</code> branches</li>
+<li>Have 2+ <code>code reviewers</code></li>
+<li>Enforce <code>pull-requests</code> and merges process</li>
+<li>Create release-branches, and lock them when stopped supporting</li>
+<li>Link <code>pull requests</code> with the work items</li>
+<li>Check all review <code>comments</code> are resolved</li>
+<li>Maintain <code>commit history</code>; do NOT allow force pushes</li>
+</ol>
+<h2>Branch Creation</h2>
+<ol>
+<li>as far as possible, stay close to <code>main</code> branch (trunk based policy)</li>
+<li>have consistant names for branches</li>
+<li>create different branches for their specific purposes (e.g. <code>develop</code>, <code>feature</code>, <code>release</code>, <code>bugfix</code>, <code>hotfix</code> etc)</li>
+<li>branch-creation could be done under guidance of <code>Repository Owners</code> (create Repository Owners)</li>
+</ol>
+<h2>Branch Naming:</h2>
+<p><code>[ feature | bugfix | hotfix ] / [ dev-id ] / [ task-id ] / &lt; _short-description_ &gt;</code>
+e.g.
+<code>feature/ankush/task-2/add-progress-bar (recommended)</code>
+or simply,
+<code>feature/task-2/add-progress-bar</code>
+or simply,
+<code>feature/add-progress-bar</code></p>
+<h2>Branches:</h2>
+<p><img alt="git-branching-strategy-diagram" src="./../img/git-branching-strategy.drawio.svg" title="git branching strategy diagram" /></p>
+<h2>References:</h2>
+<ol>
+<li>https://docs.microsoft.com/en-us/azure/devops/repos/git/git-branching-guidance?view=azure-devops</li>
+<li>https://k21academy.com/microsoft-azure/az-400/branching-strategy-devops-git-branching-model-git-branch-policy-restoring-a-deleted-branch/</li>
+</ol>
