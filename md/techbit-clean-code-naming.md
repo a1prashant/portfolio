@@ -60,3 +60,39 @@
 | `controller, manager, driver` | `controller` |
 | `DeviceManager, ProtocolController` | `DeviceManager, ProtocolManager` |
 
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+---
+
+## Functions
+- Should be small 
+    - Lines in a function: LIF
+    - LIF > 30+ : BAD
+    - 30 > LIF > 15 : OK
+    - 15 > LIF > 10 : GOOD
+    - LIF < 10 : BEST
+- should do 1 thing (only)
+- names need to be long and descriptive
+- Function arguments:
+  - niladic : BEST
+  - monadic : GOOD
+  - dyadic : OK
+  - triadic : Avoid
+  - polyadic : Avoid (need any special justification)
+
+
+- Use Argument Objects
+
+    | Bad | Good|
+    | --- | --- |
+    | `makeCircle(double x, double y, double radius` | `makeCircle(Point center, double radius` |
+    | `` | `` |
+
+- Order
+  `assertExpectedEqualsActual(expected, actual)`
+
