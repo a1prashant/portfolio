@@ -62,3 +62,49 @@ SSH password:
     "ping": "pong"
 }
 ```
+
+- Run `ansible all -m ping -k -b -i .`
+- If error "Missing sudo password"
+- Run `ansible all -m ping -k -K -b -i .`
+- Note: -k, --ask-pass: ask for connection password
+- Note: -K, --as-become-pass: ask for previlege escalation password
+
+- Verify following before using:
+```
+192.168.100.110 ansible_user=<username> ansible_ssh_pass=<password>
+```
+
+- To install jdk, jre
+```
+---
+- name: install-java
+  hosts: all
+
+  tasks:
+    - name: apt update
+      become: yes
+      become_user: idc
+      apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
+
+    - name: jdk-install
+      become: yes
+      become_user: idc
+      apt:
+        name: "openjdk-17-jdk"
+        state: present
+
+    - name: jre-install
+      become: yes
+      apt:
+        name: "openjdk-17-jre"
+        state: present
+
+    - name: check-jdk-jre-installation
+      become: yes
+      become_user: idc
+      shell: 'java --version'
+      register: command_output
+
+    - debug:
+        var: command_output.stdout_lines
+```
