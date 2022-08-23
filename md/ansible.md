@@ -79,16 +79,18 @@ SSH password:
 ---
 - name: install-java
   hosts: all
+  vars:
+    - basedir: '/usr/local'
+    - sparkdir: '/usr/local/spark-3.3.0-bin-hadoop3'
+    - tempdir: '/tmp'
 
   tasks:
     - name: apt update
       become: yes
-      become_user: idc
       apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
 
     - name: jdk-install
       become: yes
-      become_user: idc
       apt:
         name: "openjdk-17-jdk"
         state: present
@@ -101,12 +103,42 @@ SSH password:
 
     - name: check-jdk-jre-installation
       become: yes
-      become_user: idc
       shell: 'java --version'
-      register: command_output
 
-    - debug:
-        var: command_output.stdout_lines
+    - name: create-spark-dest-dir
+      become: yes
+      file:
+        path: "{{ sparkdir }}"
+        state: directory
+        mode: '0755'
+
+    - name: get spark
+      become: yes
+      ansible.builtin.get_url:
+        url: https://dlcdn.apache.org/spark/spark-3.3.0/spark-3.3.0-bin-hadoop3.tgz
+        dest: "{{ tempdir }}"
+        mode: '0755'
+
+    - name: extract spark
+      become: yes
+      ansible.builtin.unarchive:
+        src: "{{ tempdir }}/spark-3.3.0-bin-hadoop3.tgz"
+        dest: "{{ basedir }}"
+        remote_src: yes
+      environment:
+        PATH: "{{ sparkdir }}/bin:{{ sparkdir }}/sbin:{{ ansible_env.PATH }}"
+
+    - name: spark in environment
+      become: yes
+      ansible.builtin.lineinfile:
+        path: "/etc/environment"
+        line: "export PATH={{ sparkdir }}/bin:{{ sparkdir }}/sbin:{{ ansible_env.PATH }}"
+        create: yes
+
+    - name: check-spark-installation
+      become: yes
+      shell: 'spark-shell --version'
+
 ```
 
 - To run: `ansible-playbook sample.yml -i . -k -K`
