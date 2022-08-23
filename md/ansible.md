@@ -108,3 +108,7 @@ SSH password:
     - debug:
         var: command_output.stdout_lines
 ```
+
+- To run: `ansible-playbook sample.yml -i . -k -K`
+Works fine!
+
