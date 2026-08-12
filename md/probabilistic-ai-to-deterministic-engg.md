@@ -362,6 +362,16 @@ Examples include:
 
 The LLM should **orchestrate capabilities**, not impersonate them.
 
+and
+
+Before calling an LLM, ask: "Is there already a deterministic capability for this?"
+
+| Capability                 | Prefer              |
+| -------------------------- | ------------------- |
+| Ambiguous intent           | LLM                 |
+| Unstructured information   | LLM                 |
+| Novel solution discovery   | LLM                 |
+
 ---
 
 # 7. "Tool First, LLM Second"
@@ -444,8 +454,8 @@ A powerful architecture therefore looks like:
               │                           │
               ▼                           ▼
      ┌─────────────────┐         ┌─────────────────┐
-     │ Tool / SDK /     │         │      LLM        │
-     │ Rule / Workflow  │         │ Interpretation  │
+     │ Tool / SDK /    │         │      LLM        │
+     │ Rule / Workflow │         │ Interpretation  │
      └────────┬────────┘         └────────┬────────┘
               │                           │
               │                           ▼
@@ -975,7 +985,7 @@ The entire approach can be summarized as:
 ```text
                  ┌───────────────────────────────┐
                  │       HUMAN / BUSINESS        │
-                 │          INTENT                │
+                 │          INTENT               │
                  └───────────────┬───────────────┘
                                  │
                                  ▼
@@ -996,9 +1006,9 @@ The entire approach can be summarized as:
         ┌────────────────────────────────────────────────┐
         │              DETERMINISTIC CORE                │
         │                                                │
-        │ Schemas │ Rules │ APIs │ SDKs │ Libraries     │
-        │ Tools   │ SQL   │ DAGs │ State │ Workflows    │
-        │ Policies│ Math  │ Validators │ Algorithms     │
+        │ Schemas │ Rules │ APIs │ SDKs │ Libraries      │
+        │ Tools   │ SQL   │ DAGs │ State │ Workflows     │
+        │ Policies│ Math  │ Validators │ Algorithms      │
         └───────────────────────┬────────────────────────┘
                                 │
                                 ▼
@@ -1076,3 +1086,7 @@ That is the direction in which AI engineering should evolve:
 ### **From probabilistic execution to deterministic closure.**
 
 ### **From LLM dependency to LLM leverage.**
+
+
+
+#ArtificialIntelligence #GenerativeAI #SoftwareArchitecture #AIEngineering #AgenticAI #LLM #EnterpriseAI #SoftwareEngineering
