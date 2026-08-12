@@ -353,8 +353,8 @@ tr:nth-child(even) td {
 code {
   font-family: var(--font-mono);
   font-size: 0.88em;
-  background: var(--accent-soft);
-  color: #0b3d91;
+  background: #eef1f6;
+  color: #24292f;
   padding: 0.12em 0.4em;
   border-radius: 4px;
 }
@@ -362,9 +362,9 @@ code {
 /* Hand-written pages: <div class="code"><pre>…</pre></div> */
 .code,
 pre {
-  background: var(--code-bg);
-  color: var(--code-text);
-  border: 1px solid var(--code-border);
+  background: #f6f8fa;
+  color: #1f2933;
+  border: 1px solid #e1e4e8;
   border-radius: var(--radius-sm);
   padding: 16px 20px;
   overflow-x: auto;
@@ -373,7 +373,7 @@ pre {
   line-height: 1.6;
   white-space: pre;
   margin: 1em 0;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
 }
 
 .code pre {
@@ -391,18 +391,24 @@ pre code,
   padding: 0;
 }
 
-/* Rouge syntax highlighting (rendered markdown code fences) */
-.highlight,
-.highlighter-rouge {
-  background: var(--code-bg);
-  border: 1px solid var(--code-border);
+/* Rouge-rendered markdown code fences (block-level wrapper, not inline code) */
+.highlighter-rouge:not(code) {
+  background: #f6f8fa;
+  border: 1px solid #e1e4e8;
   border-radius: var(--radius-sm);
   overflow-x: auto;
   margin: 1em 0;
 }
 
-.highlight pre,
-.highlighter-rouge pre {
+.highlighter-rouge:not(code) .highlight {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+
+.highlighter-rouge:not(code) pre {
   background: transparent;
   border: 0;
   box-shadow: none;
@@ -416,7 +422,7 @@ pre code,
 .highlight .cs,
 .highlight .cp,
 .highlight .gd {
-  color: #7a7e8c;
+  color: #6a737d;
   font-style: italic;
 }
 
@@ -428,7 +434,7 @@ pre code,
 .highlight .kr,
 .highlight .kt,
 .highlight .ow {
-  color: #c678dd;
+  color: #d73a49;
 }
 
 /* keyword */
@@ -444,7 +450,7 @@ pre code,
 .highlight .sr,
 .highlight .ss,
 .highlight .sx {
-  color: #98c379;
+  color: #032f62;
 }
 
 /* string */
@@ -456,46 +462,46 @@ pre code,
 .highlight .mo,
 .highlight .mb,
 .highlight .mx {
-  color: #d19a66;
+  color: #005cc5;
 }
 
 /* number */
 .highlight .nf,
 .highlight .fm {
-  color: #61afef;
+  color: #6f42c1;
 }
 
 /* function */
 .highlight .nc,
 .highlight .nn,
 .highlight .nt {
-  color: #e5c07b;
+  color: #e36209;
 }
 
 /* class/tag */
 .highlight .nb,
 .highlight .bp,
 .highlight .n {
-  color: #e6e6e6;
+  color: #24292f;
 }
 
 /* builtin */
 .highlight .na,
 .highlight .nl,
 .highlight .nv {
-  color: #e06c75;
+  color: #005cc5;
 }
 
 /* attribute/var */
 .highlight .o,
 .highlight .p {
-  color: #abb2bf;
+  color: #586069;
 }
 
 /* operator/punct */
 .highlight .gh,
 .highlight .gi {
-  color: #98c379;
+  color: #22863a;
 }
 
 /* ============================================================

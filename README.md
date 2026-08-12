@@ -14,15 +14,14 @@ Static portfolio website for **Prashant Prabodh**
 
 ## Site structure
 
-- `index.html` — Home: Technical Bits, Articles, Projects, Quotes
+- `index.html` — Home: Profile Highlights, Technical Bits, Articles, Projects, Quotes
 - `aboutme.html` — Personal life + full professional bio / skills / career journey
 - `profile.html` — Resume (embedded PDF in `dox/`)
-- `videos.html` — YouTube video embeds
+- `videos.html` — Link to the YouTube channel
 - `quotes.html` — Favorite quotes
 - `social.html` — Social Responsibility (Helping Hands India, PEWS)
 - `techbit-*.html` — Technical Bits reference pages
 - `article-*.html` — Long-form articles (e.g. Self-aware SDLC)
-- `library.md` — Markdown Library index (rendered by Jekyll)
 - `md/` — Markdown notes/references; **rendered directly by Jekyll** on GitHub Pages (no manual build step)
 - `_layouts/`, `_includes/`, `_data/` — Jekyll layouts, partials, and navigation data
 
@@ -38,7 +37,7 @@ The main site is static HTML styled by `css/style.css`.
 - open `http://localhost:4000/portfolio/`
 
 Jekyll is **not** required to preview the static pages — it is only needed to
-render the `md/` notes and `library.md` exactly as GitHub Pages will.
+render the `md/` notes exactly as GitHub Pages will.
 
 ## Diagrams (Mermaid)
 
@@ -52,6 +51,6 @@ Mermaid server-side, so markdown pages include a small client-side script
 
 - Edit content directly in this repository (single source of truth).
 - Commit to `master`; GitHub Pages runs Jekyll and serves the static files.
-- Add markdown notes under `md/` — they appear automatically in the
-  [Markdown Library](library.html).
+- Add markdown notes under `md/` — they appear on the main page under
+  Technical Bits (general) or Articles → Automotive Notes (automotive).
 - Keep videos on YouTube; only embed links here.

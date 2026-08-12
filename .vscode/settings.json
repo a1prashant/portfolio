@@ -1,6 +1,10 @@
 {
     "python.formatting.provider": "black",
     "chat.tools.terminal.autoApprove": {
-        "jekyll": true
+        "jekyll": true,
+        "/^export PATH=\"\\$\\(ruby -e 'puts Gem\\.user_dir'\\)/bin:\\$PATH\" && jekyll build 2>&1 \\| tail -3 && echo \"===LIBRARY HTML REFS IN _site\\?===\" && \\(grep -rl 'library\\.html' _site/ 2>/dev/null \\|\\| echo \"none\"\\) && echo \"===LIBRARY HTML REFS IN SOURCE\\?===\" && \\(grep -rn 'library\\.html' --include='\\*\\.html' --include='\\*\\.yml' --include='\\*\\.md' \\. --exclude-dir=_site --exclude-dir=\\.git 2>/dev/null \\|\\| echo \"none\"\\) && echo \"===SITE PAGE COUNT===\" && ls _site/\\*\\.html \\| wc -l$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
     }
 }
