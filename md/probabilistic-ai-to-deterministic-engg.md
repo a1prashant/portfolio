@@ -1,3 +1,7 @@
+---
+layout: page
+---
+
 # From Probabilistic AI to Deterministic Engineering
 
 ## Left-Shifting Intelligence, Right-Shifting Certainty
