@@ -47,13 +47,34 @@ layout: default
         <li><a href="techbit-autosar.html">AUTOSAR</a>: overview</li>
         <li><a href="techbit-design-thoughts.html">Design Thoughts</a>: Design Principles, SOLID, and Patterns</li>
         <li><a href="techbit-yaml.html">YAML</a>: Minimum YAML</li>
-        <li><a href="techbit-cpp-smart-pointers.html">C++ Smart Pointers</a>: few reminders</li>
+        <li><a href="md/techbit-cpp-smart-pointers.html">C++ Smart Pointers</a>: few reminders</li>
         <li><a href="techbit-cpptopics.html">C++ Topics</a>: just the listing</li>
-        <li><a href="techbit-core-banking-system.html">Core Banking System</li>
+        <li><a href="md/techbit-core-banking-system.html">Core Banking System</li>
         <li><a href="techbit-uml-relations.html">Understand UML relations with C++ examples</a></li>
-        <li><a href="techbit-git-branching-strategy.html">Git Branching Strategy</a></li>
-        <li><a href="techbit-userstory-dod-ac.html">How to write User Story, Acceptance Criteria and
+        <li><a href="md/techbit-git-branching-strategy.html">Git Branching Strategy</a></li>
+        <li><a href="md/techbit-userstory-dod-ac.html">How to write User Story, Acceptance Criteria and
             Definition-of-Done</a></li>
+        <li><a href="md/techbit-cpp-cast.html">C++ cast</a>
+          : static_cast, dynamic_cast, const_cast, reinterpret_cast</li>
+        <li><a href="md/techbit-clean-code-naming.html">Clean Code Notes</a>
+          : naming conventions</li>
+        <li><a href="md/techbit-docker-commands.html">Docker Commands</a>
+          : frequently used commands</li>
+        <li><a href="md/techbit-git-commands.html">Git Commands</a>
+          : frequently used commands</li>
+        <li><a href="md/techbit-harbor-repository.html">Harbor Repository</a>
+          : working with a container registry</li>
+        <li><a href="md/techbit-md-to-html.html">Markdown to HTML</a>
+          : converting notes to HTML</li>
+        <li><a href="md/techbit-resume-content.html">Resume Content</a>
+          : resume writing tips</li>
+        <li><a href="md/techbit-setup-dev-env-windows.html">Setup Dev Environment on Windows</a></li>
+        <li><a href="md/techbit-stl-containers.html">STL Containers</a>
+          : choosing the right container</li>
+        <li><a href="md/ansible.html">Ansible</a>
+          : automation / configuration management</li>
+        <li><a href="md/spark.html">Apache Spark</a>
+          : unified analytics engine</li>
       </ol>
     </li>
     <br />
@@ -79,15 +100,20 @@ layout: default
           GitHub Pages</li>
       </ol>
       <br />
-      <div class="topic">Notes (Markdown)</div>
+      <div class="topic">Automotive Notes</div>
       <ol>
-        {% assign notes = site.pages | sort: "path" %}
-        {% for note in notes %}
-        {% if note.path contains "md/" %}
-        <li><a href="{{ site.baseurl }}{{ note.url }}">{{ note.path | remove: "md/" | remove: ".md" | replace: " - ", "
-            " | replace: "-", " " }}</a></li>
-        {% endif %}
-        {% endfor %}
+        <li><a href="md/A%20SPICE.html">A SPICE</a>
+          : Automotive SPICE — process assessment model</li>
+        <li><a href="md/ADAS.html">ADAS</a>
+          : Advanced Driver Assistance Systems</li>
+        <li><a href="md/API%20Gateway.html">In-Vehicle API Gateway</a></li>
+        <li><a href="md/Automotive%20Testing.html">Automotive Testing</a>
+          : Verification, Validation &amp; X-in-the-Loop</li>
+        <li><a href="md/CPU,%20GPU,%20MCU,%20NPU%20in%20automotive.html">CPU, GPU, MCU, NPU in Automotive</a></li>
+        <li><a href="md/Functional%20Safety%20-%20ISO%2026262.html">Functional Safety - ISO 26262</a></li>
+        <li><a href="md/SDV%20and%20Architecture.html">SDV and Architecture</a>
+          : Software-Defined Vehicles</li>
+        <li><a href="md/VxWorks%20RTOS.html">Real-Time Operating Systems in Automotive</a></li>
       </ol>
     </li>
     <br />
