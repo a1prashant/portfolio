@@ -1,3 +1,7 @@
+---
+layout: page
+---
+
 ```
 docker login harbour.<orgname>.com
 > username: <username>

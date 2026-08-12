@@ -1,3 +1,7 @@
+---
+layout: page
+---
+
 # Resume Content
 
 ## First Page:

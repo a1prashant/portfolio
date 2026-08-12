@@ -1,0 +1,102 @@
+
+Tech By Prashant Prabodh	
+HomeArticles
+
+Prashant Prabodh
+Senior Technology Executive | Software Architect | Consultant | Coder
+I am a seasoned software architect and technical leader with over two decades of experience across multiple domains — including market data and trading technologies in BFSI, software-defined vehicles (SDV) in automotive, embedded systems, backup solutions and healthcare. A passionate advocate of engineering best practices, I champion clean-code principles, modular and policy-based architecture, and scalable development pipelines. I also have strong interest in the latest methodologies for team leadership and delivery excellence. More recently, my focus has expanded into Gen AI and agentic workflow development — designing systems where intelligent agents autonomously execute multi-step processes and scale business value. I partner with organizations to define vision, lead transformation, enable teams, and deliver complex software systems with measurable impact.
+
+Contact me
+Email: job.prabodh@gmail.com
+
+Online presence
+GitHub: a1prashant
+
+YouTube: TechPrashantPrabodh
+
+Career Highlights
+Background
+With 2 decade+ years in the technology industry, first I began my career as a system software developer working on client/server and middleware applications, including protocol development. Over time I transitioned into leadership, bridging deep engineering and strategic oversight.
+
+My journey spans building high-performance trading platforms (HFT/market-data) to today’s cutting-edge domains of Gen AI, full-stack development and autonomous systems. I’ve architected resilient solutions, modernised legacy systems and enabled teams to deliver at scale. As a hands-on architect fluent in full-stack development, DevOps, cloud and modular system design, I’ve led cross-discipline teams, mentored engineers into leadership roles and driven measurable impact—whether latency reductions, throughput gains or operational excellence. I remain passionate about emerging domains, technical innovation and continuous delivery of business value.
+
+At Persistent Systems, in my role as Principal Architect, I’m contributing to multiple Gen AI initiatives for a UK-based financial organization—automating KTLO activities, enabling UI/UX auto-generation and scaling AI-enabled platforms. I’m also architecting a major healthcare transformation: migrating from a Salesforce/UI stack to a standalone React/PostgreSQL platform on AWS, with AI-assisted case review workflows. In addition I led the full-stack design of an internal Gen AI “ChatGPT-style” assistant—leveraging retrieval-augmented generation (RAG), vector databases, prompt engineering and cloud-scale deployment. I further oversaw integration of a Gen AI-Hub product into a client’s ecosystem—covering LLM apps, key-management, evaluation frameworks and custom cloud services.
+
+My strength lies in marrying technical mastery (modern frameworks, cloud infrastructure, DevOps practices) with leadership—mentoring teams, defining architecture, aligning with business goals and delivering outcomes at scale.
+
+My Philosophy
+
+Build systems with clean-code and modular architecture.
+
+Empower teams: mentor, foster agile culture and promote ownership.
+
+Stay hands-on: retain strong technical chops while guiding strategy.
+
+
+What I Do
+
+Architect end-to-end software systems with high reliability, performance and safety.
+
+Lead technical teams: define road-maps, establish best-practices and assess tools & risks.
+
+Drive transformation: modernise legacy systems, adopt agile/devops and ramp up productivity.
+
+Skills and Expertise
+Expertise & Skills
+✅ Domains & Strategic Focus
+Enterprise-scale GenAI & LLM systems: design, prompt engineering, Retrieval-Augmented Generation (RAG) workflows, vector database embedding, agentic architectures.
+
+Cloud-native transformation and platforms (AWS, Azure, multi-cloud): infrastructure, containerization, CI/CD pipelines, hybrid deployment, productionization of intelligent services.
+
+Software architecture and system engineering: modular architectures, high-performance and low-latency solutions, embedded/real-time systems, clean code and TDD mindset.
+
+Industry verticals: Financial services (BFSI) product ecosystems, Healthcare platforms, internal GenAI tooling and hubs—aligning technology strategy with business outcomes.
+
+
+🔧 Technical Skills & Tools
+Programming & frameworks: Next.js, FastAPI, Swagger, OpenAI API (GPT4o, DALL·E), LangChain, FAISS, embeddings, agent tooling.
+
+Cloud & infrastructure: AWS (Route 53, ALB, ECS Fargate, S3, RDS-Postgres, IAM, Auto-scaling), Terraform, Docker, GitHub Actions.
+
+Architecture & engineering: domain-driven design, TDD, clean code practices, microservices, modular system design, performance tuning and cost optimisation.
+
+Data & AI engineering: vector database design, context window management, RAG pipelines, prompt engineering, token/cost control, multi-modal ingestion (documents/images).
+
+Leadership & delivery: define architecture vision, lead cross-functional teams, mentor senior and junior engineers, drive engineering culture, stakeholder management, roadmap and delivery governance.
+
+
+🎯 Leadership & Soft Skills
+Trusted technical advisor: partner with business stakeholders to translate strategy into architecture and roadmap, align cross-discipline teams (engineering, product, operations).
+
+Team builder & mentor: foster engineering excellence, define best-practices (code reviews, CI/CD, pair programming), elevate team capability.
+
+Outcome-driven: focus on measurable improvements (latency reduction, throughput increase, cost savings, release cadence improvement).
+
+Continuous learner & innovator: stay current with emerging GenAI/LLM trends, evaluate tools and frameworks, drive adoption of new capabilities responsibly (governance, guard-rails, risk/compliance).
+
+Technical Bits
+Videos
+
+Overview on Modern Software Development session done for a NGO working for EWS as part of their Career Guidance Camp
+
+Overview on SDV
+This video is first in the series I did on SDV
+
+Articles
+Self-aware SDLC
+Unifying Requirements, Code, Tests, and Runtime Through Artifact Reuse and Graph-Based Intelligence
+
+PCP : Process Control Protocol
+Creating Capabilities on Demand in AI Agent Systems When Existing Tools Are Not Enough
+Architecture and Design Insights 
+Article catches my thoughts around software architecture and design
+
+'uv' package manager
+commands reference page
+
+Quotes
+I love quotes! Quotes are great! They are by great people!
+I may not be as great as those great men and women, but I too at times think of few quotes and they are documented :)
+See if you like them.
+Click here
+

@@ -1,3 +1,7 @@
+---
+layout: page
+---
+
 # GIT Branching Strategy
 
 ## Background

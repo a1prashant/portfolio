@@ -1,3 +1,7 @@
+---
+layout: page
+---
+
 How to quickly setup Development Environment on Windows
 ==============
 

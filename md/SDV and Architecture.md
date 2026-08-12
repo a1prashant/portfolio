@@ -1,3 +1,7 @@
+---
+layout: page
+---
+
 # Software-Defined Vehicles (SDV) and Architecture
 
 **Document by:** Prashant Gawai

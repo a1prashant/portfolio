@@ -1,3 +1,7 @@
+---
+layout: page
+---
+
 # Ansible
 
 - Works only on Linux

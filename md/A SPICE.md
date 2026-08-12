@@ -1,3 +1,7 @@
+---
+layout: page
+---
+
 Author: Prashant Gawai
 
 Version: 3.1

@@ -1,3 +1,7 @@
+---
+layout: page
+---
+
 # Definition-Of-Done (DOD):
 For most User Stories for development tasks, to a large extent, the *DOD* can be standardized.
 

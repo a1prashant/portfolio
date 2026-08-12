@@ -1,3 +1,7 @@
+---
+layout: page
+---
+
 # C++ cast
 
 1. static_cast

@@ -1,3 +1,7 @@
+---
+layout: page
+---
+
 # Apache Spark
 
 - install spark-cluster (or on local)

@@ -1,3 +1,7 @@
+---
+layout: page
+---
+
 # In-Vehicle API Gateway
 
 **Document by:** Prashant Gawai

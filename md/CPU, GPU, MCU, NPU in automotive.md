@@ -1,3 +1,7 @@
+---
+layout: page
+---
+
 # CPU, GPU, MCU, NPU in Automotive
 
 > Originally drafted with an AI assistant; reviewed and expanded for the SDV architecture context.

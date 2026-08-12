@@ -1,0 +1,27 @@
+<!-- Client-side Mermaid rendering for markdown code blocks (GitHub Pages does not run Mermaid server-side) -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        if (typeof mermaid === 'undefined') { return; }
+        mermaid.initialize({ startOnLoad: false, theme: 'neutral' });
+        var blocks = document.querySelectorAll('code.language-mermaid');
+        if (!blocks.length) { return; }
+        blocks.forEach(function (code, index) {
+            var pre = code.closest('pre');
+            if (!pre) { return; }
+            var source = code.textContent.trim();
+            if (!source) { return; }
+            var holder = document.createElement('div');
+            holder.className = 'mermaid-figure';
+            var id = 'mermaid-' + index;
+            mermaid.render(id, source).then(function (res) {
+                holder.innerHTML = res.svg;
+                pre.parentNode.replaceChild(holder, pre);
+            }).catch(function (err) {
+                holder.textContent = 'Mermaid diagram could not be rendered: ' + err.message;
+                holder.className = 'mermaid-figure mermaid-error';
+                pre.parentNode.replaceChild(holder, pre);
+            });
+        });
+    });
+</script>

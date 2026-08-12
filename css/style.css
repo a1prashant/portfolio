@@ -1,56 +1,262 @@
-body {
-  font-family: "Raleway";
-  font-size: 20px;
-  background-color: azure;
-}
+/* ============================================================
+   Prashant Prabodh — Portfolio
+   Professional theme
+   ============================================================ */
 
-section {
-  border: 1px solid orange;
-  margin: 5;
-  padding: 5;
-  background-color: cornsilk;
-  box-shadow: lightseagreen;
-}
-
-section > ol > li > ol > li {
-  list-style-type: upper-roman;
-}
-
-table,
-th,
-td {
-  border: 1px solid black;
-}
-
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+:root {
+  --bg: #f6f8fa;
+  --surface: #ffffff;
+  --text: #1f2933;
+  --text-muted: #5b6573;
+  --heading: #111827;
+  --accent: #1f6feb;
+  --accent-dark: #0b4db8;
+  --accent-soft: rgba(31, 111, 235, 0.09);
+  --border: #e1e4e8;
+  --border-strong: #d0d7de;
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.05);
+  --shadow: 0 1px 3px rgba(16, 24, 40, 0.08), 0 1px 2px rgba(16, 24, 40, 0.04);
+  --shadow-lg: 0 12px 32px rgba(16, 24, 40, 0.14);
+  --radius: 10px;
+  --radius-sm: 6px;
+  --nav-bg: #ffffff;
+  --nav-text: #334155;
+  --code-bg: #1e1f29;
+  --code-text: #e6e6e6;
+  --code-border: #2c2d3a;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --font-display: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "SF Mono", "JetBrains Mono", "Fira Code", Menlo, Consolas,
+    "Liberation Mono", "Courier New", monospace;
 }
 
 * {
   box-sizing: border-box;
 }
 
-label.page_wip {
-  background-color: yellow;
-  border: tomato;
-  border-style: solid;
-  appearance: button;
-  padding: 2px 2px;
+html {
+  scroll-behavior: smooth;
 }
 
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--text);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+main.container {
+  padding-top: 32px;
+  padding-bottom: 64px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  color: var(--heading);
+  line-height: 1.25;
+  margin: 1.4em 0 0.6em;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.05rem;
+}
+
+h2 {
+  font-size: 1.55rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.3em;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 1.05rem;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-dark);
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+/* ============================================================
+   Header / Navigation
+   ============================================================ */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.top-nav {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  min-height: 60px;
+}
+
+.site-brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--heading);
+  padding: 12px 0;
+  white-space: nowrap;
+}
+
+.site-brand:hover {
+  text-decoration: none;
+  color: var(--accent);
+}
+
+.top-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.top-nav ul>li>a {
+  display: block;
+  color: var(--nav-text);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.top-nav ul>li>a:hover {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* ============================================================
+   Layout sections
+   ============================================================ */
+
+section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+}
+
+article section:first-child {
+  margin-top: 0;
+}
+
+aside {
+  background: var(--accent-soft);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  margin: 16px 0;
+}
+
+blockquote {
+  margin: 1em 0;
+  padding: 0.4em 1em;
+  border-left: 4px solid var(--accent);
+  background: var(--accent-soft);
+  color: var(--text);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+blockquote p {
+  margin: 0.4em 0;
+}
+
+/* Section topic headings (used by homepage lists) */
 .topic {
-  border: 1px solid lightcoral;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--heading);
+  border-left: 4px solid var(--accent);
+  padding: 2px 0 2px 12px;
+  margin-bottom: 8px;
+}
+
+/* ============================================================
+   Homepage avatar
+   ============================================================ */
+
+#mainimg {
+  display: block;
+  border-radius: 50%;
+  border: 3px solid var(--surface);
+  box-shadow: var(--shadow-lg);
+  margin: 4px auto 12px;
+}
+
+/* ============================================================
+   Cards
+   ============================================================ */
+
+.row {
+  margin: 0 -10px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .column {
-  float: left;
+  float: none;
+  flex: 1 1 300px;
   padding: 0 10px;
-}
-
-.row {
-  margin: 0 -5px;
+  margin-bottom: 20px;
 }
 
 .row:after {
@@ -59,53 +265,392 @@ label.page_wip {
   clear: both;
 }
 
-/*--- NAV ---*/
-.top-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  height: 100%;
 }
 
-.top-nav ul > li {
-  float: left;
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
 }
 
-.top-nav ul > li > a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
+.card h3 {
+  margin-top: 0;
+}
+
+.card a {
+  color: var(--heading);
+}
+
+.card a:hover {
+  color: var(--accent);
   text-decoration: none;
 }
 
-.top-nav ul > li > a:hover {
-  background-color: #111;
+/* ============================================================
+   Buttons
+   ============================================================ */
+
+.button,
+a.button {
+  display: inline-block;
+  background: var(--accent);
+  color: #ffffff;
+  padding: 8px 18px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-code, .code {
-  background-clip: border-box;
-  border: 6px ridge darkgray;
-  background-color:lightsteelblue;
-  white-space:inherit;
-  padding-left: 20px;
-  display: block;
+.button:hover {
+  background: var(--accent-dark);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* ============================================================
+   Tables
+   ============================================================ */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+  font-size: 0.95rem;
+  background: var(--surface);
+}
+
+th,
+td {
+  border: 1px solid var(--border-strong);
+  padding: 8px 12px;
+  text-align: left;
+}
+
+th {
+  background: #f0f3f7;
+  font-weight: 600;
+  color: var(--heading);
+}
+
+tr:nth-child(even) td {
+  background: #fafbfc;
+}
+
+/* ============================================================
+   Code blocks
+   ============================================================ */
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background: var(--accent-soft);
+  color: #0b3d91;
+  padding: 0.12em 0.4em;
+  border-radius: 4px;
+}
+
+/* Hand-written pages: <div class="code"><pre>…</pre></div> */
+.code,
+pre {
+  background: var(--code-bg);
+  color: var(--code-text);
+  border: 1px solid var(--code-border);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  line-height: 1.6;
   white-space: pre;
-  font-family: 'Courier New', Courier, monospace ;
-  font-size: large
+  margin: 1em 0;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-.danger {
-  background-color: red;
+.code pre {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+
+pre code,
+.code code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}
+
+/* Rouge syntax highlighting (rendered markdown code fences) */
+.highlight,
+.highlighter-rouge {
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: var(--radius-sm);
+  overflow-x: auto;
+  margin: 1em 0;
+}
+
+.highlight pre,
+.highlighter-rouge pre {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  margin: 0;
+  padding: 16px 20px;
+}
+
+.highlight .c,
+.highlight .c1,
+.highlight .cm,
+.highlight .cs,
+.highlight .cp,
+.highlight .gd {
+  color: #7a7e8c;
+  font-style: italic;
+}
+
+/* comment */
+.highlight .k,
+.highlight .kd,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr,
+.highlight .kt,
+.highlight .ow {
+  color: #c678dd;
+}
+
+/* keyword */
+.highlight .s,
+.highlight .s1,
+.highlight .s2,
+.highlight .sb,
+.highlight .sc,
+.highlight .sd,
+.highlight .se,
+.highlight .sh,
+.highlight .si,
+.highlight .sr,
+.highlight .ss,
+.highlight .sx {
+  color: #98c379;
+}
+
+/* string */
+.highlight .m,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .il,
+.highlight .mo,
+.highlight .mb,
+.highlight .mx {
+  color: #d19a66;
+}
+
+/* number */
+.highlight .nf,
+.highlight .fm {
+  color: #61afef;
+}
+
+/* function */
+.highlight .nc,
+.highlight .nn,
+.highlight .nt {
+  color: #e5c07b;
+}
+
+/* class/tag */
+.highlight .nb,
+.highlight .bp,
+.highlight .n {
+  color: #e6e6e6;
+}
+
+/* builtin */
+.highlight .na,
+.highlight .nl,
+.highlight .nv {
+  color: #e06c75;
+}
+
+/* attribute/var */
+.highlight .o,
+.highlight .p {
+  color: #abb2bf;
+}
+
+/* operator/punct */
+.highlight .gh,
+.highlight .gi {
+  color: #98c379;
+}
+
+/* ============================================================
+   Markdown content (Jekyll-rendered md pages)
+   ============================================================ */
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 1.6em;
+}
+
+.markdown-body li {
+  margin: 0.35em 0;
+}
+
+.markdown-body h1 {
+  margin-top: 0.4em;
+}
+
+.md-library {
+  list-style: none;
+  padding: 0;
+  margin: 1em 0;
+}
+
+.md-library li {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  margin-bottom: 8px;
+}
+
+.md-library a {
+  display: block;
+  padding: 12px 16px;
+  font-weight: 600;
+  color: var(--heading);
+}
+
+.md-library a:hover {
+  color: var(--accent);
+  background: var(--accent-soft);
+  text-decoration: none;
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  padding: 28px 0;
+  margin-top: 16px;
+}
+
+.site-footer .container {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.site-footer a {
+  margin: 0 6px;
+  white-space: nowrap;
+}
+
+footer small {
+  display: block;
+  margin-top: 10px;
+  color: var(--text-muted);
+}
+
+/* ============================================================
+   Misc helpers
+   ============================================================ */
+
+label.page_wip {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  border-radius: var(--radius-sm);
+  padding: 4px 10px;
+  font-weight: 600;
+  display: inline-block;
 }
 
 .good {
-  background-color: green;
+  background: #d1fae5;
+  color: #065f46;
+  padding: 2px 8px;
+  border-radius: 4px;
 }
 
-/*--- Footer ---*/
-footer {
-  margin: auto;
+.danger {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.lead {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+}
+
+/* ============================================================
+   Mermaid diagrams (rendered client-side on markdown pages)
+   ============================================================ */
+
+.mermaid-figure {
   text-align: center;
+  margin: 1.5em 0;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow-x: auto;
+}
+
+.mermaid-figure svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.mermaid-error {
+  color: #991b1b;
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+@media (max-width: 720px) {
+  body {
+    font-size: 16px;
+  }
+
+  .top-nav {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .top-nav ul {
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  section {
+    padding: 16px;
+  }
 }

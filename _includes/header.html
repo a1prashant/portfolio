@@ -1,0 +1,10 @@
+<header class="site-header">
+    <nav class="top-nav" aria-label="Main navigation">
+        <a class="site-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
+        <ul>
+            {% for item in site.data.navigation %}
+            <li><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </nav>
+</header>

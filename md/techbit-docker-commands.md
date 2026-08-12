@@ -1,3 +1,7 @@
+---
+layout: page
+---
+
 # Docker Commands
 
 ## Run

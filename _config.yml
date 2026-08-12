@@ -1,0 +1,44 @@
+# ============================================================
+# Site configuration — GitHub Pages (Jekyll)
+# ============================================================
+
+title: Prashant Prabodh
+author: Prashant Prabodh
+email: job.prabodh@gmail.com
+description: >-
+  Senior Technology Executive | Software Architect | Consultant | Coder.
+  Technical bits, articles, videos, and projects.
+
+# GitHub Pages project site lives under /portfolio
+baseurl: "/portfolio"
+url: "https://a1prashant.github.io"
+
+# Markdown rendering
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Render markdown notes under /md with the professional page layout
+defaults:
+  - scope:
+      path: "md"
+      type: pages
+    values:
+      layout: page
+
+# Files/folders that should not be published
+exclude:
+  - setup.py
+  - auto_create_plantuml_imgs.py
+  - config.cfg
+  - config.yaml
+  - sites-content.txt
+  - dumping-ground.md
+  - template
+  - template-techbit-.html
+  - md/html
+  - script/gen-src
+  - Gemfile
+  - Gemfile.lock

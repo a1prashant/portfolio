@@ -1,3 +1,7 @@
+---
+layout: page
+---
+
 # Advanced Driver Assistance Systems (ADAS)
 
 **Author:** Prashant Gawai

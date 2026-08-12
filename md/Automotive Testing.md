@@ -1,3 +1,7 @@
+---
+layout: page
+---
+
 # Automotive Testing: Verification, Validation & X-in-the-Loop
 
 **Author:** Prashant Gawai

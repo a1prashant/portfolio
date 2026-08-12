@@ -1,3 +1,7 @@
+---
+layout: page
+---
+
 C++ Smart pointers
 ==================
 

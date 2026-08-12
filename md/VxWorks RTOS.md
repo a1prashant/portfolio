@@ -1,3 +1,7 @@
+---
+layout: page
+---
+
 # Real-Time Operating Systems in Automotive (Linux / AGL, QNX, VxWorks, GHS)
 
 **Author:** Prashant Gawai

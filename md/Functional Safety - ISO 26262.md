@@ -1,3 +1,7 @@
+---
+layout: page
+---
+
 Document by: Prashant Gawai
 
 Date: 27th June 2023

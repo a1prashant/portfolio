@@ -1,3 +1,7 @@
+---
+layout: page
+---
+
 # git commands
 
 > `git config -global user.name "first-name last-name"`

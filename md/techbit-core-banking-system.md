@@ -1,3 +1,7 @@
+---
+layout: page
+---
+
 ## Core Banking System Primer
 
 - Introduction:
