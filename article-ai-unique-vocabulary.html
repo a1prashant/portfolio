@@ -1,0 +1,628 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="script/local.js"></script>
+</head>
+
+<body>
+    <div id="nav-placeholder"></div>
+
+    <article>
+        <section>
+            <h1>The Need for an AI-Unique Vocabulary</h1>
+            <h2>Designing Language for Humans and AI</h2>
+
+            <p>
+                As AI becomes an active participant in understanding requirements, generating
+                specifications, retrieving knowledge, writing code, and making decisions, we
+                need to rethink something very fundamental: the words we use to describe our
+                systems.
+            </p>
+            <p>
+                Traditionally, naming was primarily designed for humans. A name only needed to
+                make sense to people who understood the surrounding context.
+            </p>
+            <p>That assumption is changing.</p>
+            <p>
+                Today, the same language is consumed by humans, AI assistants, RAG systems,
+                semantic search engines, embeddings, agents, documentation generators, and
+                coding assistants. When the terminology we use is generic or overloaded, the
+                surrounding context may not always be sufficient to establish exactly what we
+                mean.
+            </p>
+            <p>This creates a new requirement:</p>
+            <blockquote>
+                <p>
+                    Important concepts within a system should have distinctive, stable, and
+                    semantically unambiguous names that both humans and AI can recognize.
+                </p>
+            </blockquote>
+
+            <h2>1. The Problem: Common Words Carry Too Many Meanings</h2>
+            <p>Consider words such as Platform or Application.</p>
+            <p>Within one enterprise, we might have:</p>
+            <ul>
+                <li>AI Platform</li>
+                <li>AI Application</li>
+                <li>Cloud Platform</li>
+                <li>Data Platform</li>
+                <li>Developer Platform</li>
+                <li>Integration Platform</li>
+                <li>Application Platform</li>
+                <li>Business Platform</li>
+            </ul>
+            <p>For a human reading an entire document, the meaning may be reasonably obvious.</p>
+            <p>But AI often does not receive the entire document.</p>
+            <p>
+                A RAG system may retrieve only a few chunks. An agent may receive a summarized
+                context. A coding assistant may see only the files relevant to a particular
+                task. Semantic retrieval may identify several passages containing similar
+                concepts.
+            </p>
+            <p>Suppose the documentation says:</p>
+            <blockquote>
+                <p>"The Platform validates the request before sending it to the service."</p>
+            </blockquote>
+            <p>Which platform?</p>
+            <p>
+                The original author may know. A team member may infer it from the document. But
+                once this sentence is extracted from its original location and placed into an
+                AI context window, much of that implicit context disappears.
+            </p>
+            <p>The problem therefore is not merely terminology.</p>
+            <p>It is context portability.</p>
+            <p>
+                A good term should retain its identity even when it travels outside its original
+                paragraph, document, application, or conversation.
+            </p>
+
+            <h2>2. Similar Names Can Create Semantic Collisions</h2>
+            <p>Imagine that a solution contains two concepts:</p>
+            <ul>
+                <li>
+                    <strong>Customer Data Platform</strong> &mdash; A platform responsible for
+                    ingesting and managing customer information.
+                </li>
+                <li>
+                    <strong>Customer Engagement Platform</strong> &mdash; A platform responsible
+                    for customer campaigns and interactions.
+                </li>
+            </ul>
+            <p>Documentation may gradually start shortening both:</p>
+            <ul>
+                <li>"Customer Platform"</li>
+                <li>"Platform service"</li>
+                <li>"Customer service"</li>
+                <li>"Engagement service"</li>
+            </ul>
+            <p>
+                For humans working on the project every day, these shortcuts may remain
+                understandable.
+            </p>
+            <p>
+                For semantic retrieval, however, the terms customer, platform, and service occur
+                throughout both domains.
+            </p>
+            <p>A question such as:</p>
+            <blockquote>
+                <p>"How does the Customer Platform authorize a request?"</p>
+            </blockquote>
+            <p>could therefore retrieve content from both systems.</p>
+            <p>Now imagine that the first concept instead has a distinctive project vocabulary:</p>
+            <ul>
+                <li><code>CustVault</code> = customer-data management domain</li>
+                <li><code>EngageSphere</code> = customer-engagement domain</li>
+            </ul>
+            <p>Documentation can then say:</p>
+            <blockquote>
+                <p>"CustVault validates ownership before exposing customer information."</p>
+            </blockquote>
+            <p>and</p>
+            <blockquote>
+                <p>"EngageSphere uses customer segments to initiate a campaign."</p>
+            </blockquote>
+            <p>Even if these sentences are extracted independently, their identities survive.</p>
+            <p>The distinctive term acts almost like a semantic namespace.</p>
+
+            <h2>3. The Same Principle Applies to Processes</h2>
+            <p>This concept should not be limited to components.</p>
+            <p>Consider an insurance system containing several review processes:</p>
+            <ul>
+                <li>Claim Review</li>
+                <li>Policy Review</li>
+                <li>Risk Review</li>
+                <li>Compliance Review</li>
+            </ul>
+            <p>Documentation may repeatedly contain sentences such as:</p>
+            <blockquote>
+                <p>"The review process sends the case for approval."</p>
+            </blockquote>
+            <p>If that sentence is retrieved independently, its meaning is weak.</p>
+            <p>Instead, important processes can receive distinctive identities:</p>
+            <ul>
+                <li><code>ClaimLens</code> = claim assessment process</li>
+                <li><code>PolicyGate</code> = policy validation process</li>
+                <li><code>RiskProbe</code> = risk evaluation process</li>
+                <li><code>ComplyCheck</code> = regulatory compliance process</li>
+            </ul>
+            <p>Now documentation can state:</p>
+            <blockquote>
+                <p>"ClaimLens sends claims above the defined threshold to manual assessment."</p>
+            </blockquote>
+            <p>That statement carries considerably more context by itself.</p>
+
+            <h2>4. It Becomes Even More Important for AI Agents</h2>
+            <p>Consider an enterprise AI system containing agents for:</p>
+            <ul>
+                <li>requirement analysis</li>
+                <li>architecture generation</li>
+                <li>code generation</li>
+                <li>security review</li>
+                <li>testing</li>
+                <li>deployment</li>
+            </ul>
+            <p>If every document simply refers to "the agent", ambiguity quickly develops.</p>
+            <p>Instead, establish identities such as:</p>
+            <ul>
+                <li><code>SpecScout</code> = requirement-analysis agent</li>
+                <li><code>ArchPilot</code> = architecture agent</li>
+                <li><code>CodeForge</code> = code-generation agent</li>
+                <li><code>SecureLens</code> = security-review agent</li>
+                <li><code>TestProbe</code> = testing agent</li>
+            </ul>
+            <p>Then instructions become naturally self-identifying:</p>
+            <blockquote>
+                <p>"SpecScout converts the business requirement into structured specifications."</p>
+            </blockquote>
+            <blockquote>
+                <p>"ArchPilot consumes the SpecScout output."</p>
+            </blockquote>
+            <blockquote>
+                <p>"SecureLens evaluates the ArchPilot design before CodeForge starts implementation."</p>
+            </blockquote>
+            <p>The vocabulary itself now communicates part of the architecture.</p>
+            <p>
+                Humans can understand the flow, but so can an AI system attempting to retrieve,
+                summarize, reason about, or execute it.
+            </p>
+
+            <h2>5. A Business Example</h2>
+            <p>The same problem exists outside technology.</p>
+            <p>Imagine a banking organization with:</p>
+            <ul>
+                <li>Customer Onboarding</li>
+                <li>Partner Onboarding</li>
+                <li>Employee Onboarding</li>
+                <li>Merchant Onboarding</li>
+            </ul>
+            <p>Hundreds of documents may therefore contain the word onboarding.</p>
+            <p>Someone asks an AI assistant:</p>
+            <blockquote>
+                <p>"What approvals are required during onboarding?"</p>
+            </blockquote>
+            <p>The AI must determine which onboarding process was intended.</p>
+            <p>Instead, the organization could define durable identities:</p>
+            <ul>
+                <li><code>ClientStart</code> = customer onboarding</li>
+                <li><code>PartnerLink</code> = partner onboarding</li>
+                <li><code>MerchantLaunch</code> = merchant onboarding</li>
+            </ul>
+            <p>A business requirement can then say:</p>
+            <blockquote>
+                <p>"MerchantLaunch requires fraud verification before account activation."</p>
+            </blockquote>
+            <p>That statement remains understandable even when extracted from a much larger specification.</p>
+            <p>
+                This is important because the consumer of enterprise documentation is no longer
+                only the employee who wrote it.
+            </p>
+            <p>The consumer may also be an AI system encountering one paragraph among millions.</p>
+
+            <h2>6. Think of These Terms as Semantic Anchors</h2>
+            <p>The purpose is not to invent unusual words simply for creativity.</p>
+            <p>A useful term should be a Semantic Anchor.</p>
+            <p>
+                A Semantic Anchor is a stable and distinctive word or phrase assigned to an
+                important:
+            </p>
+            <ul>
+                <li>component</li>
+                <li>process</li>
+                <li>capability</li>
+                <li>business concept</li>
+                <li>data object</li>
+                <li>workflow</li>
+                <li>agent</li>
+                <li>control</li>
+                <li>architectural boundary</li>
+            </ul>
+            <p>Once established, that term should be used consistently across:</p>
+            <p>
+                Business Requirement &rarr; Functional Specification &rarr; Architecture &rarr;
+                API &rarr; Code &rarr; Test Cases &rarr; Operational Documentation &rarr; AI
+                Knowledge Base
+            </p>
+            <p>For example:</p>
+            <p><strong>RiskProbe</strong></p>
+            <ul>
+                <li><strong>Business requirement:</strong> RiskProbe evaluates applications before credit approval.</li>
+                <li><strong>Architecture:</strong> RiskProbe receives applicant data through the decision API.</li>
+                <li><strong>Code:</strong> <code>RiskProbeService</code></li>
+                <li><strong>Test:</strong> <code>RiskProbe_HighRiskApplicant_RequiresManualReview</code></li>
+                <li><strong>Monitoring:</strong> <code>RiskProbeDecisionLatency</code></li>
+                <li><strong>Runbook:</strong> If RiskProbe becomes unavailable, applications enter the manual-review queue.</li>
+            </ul>
+            <p>The terminology now becomes a thread connecting the entire system.</p>
+
+            <h2>7. The Important Principle: Uniqueness Matters More Than Length</h2>
+            <p>A common naming practice is to create increasingly descriptive names:</p>
+            <blockquote>
+                <p>Enterprise Customer Identity Verification Platform</p>
+            </blockquote>
+            <p>This appears precise, but most of its individual words are generic.</p>
+            <p>Different systems may contain:</p>
+            <ul>
+                <li>Enterprise Identity Platform</li>
+                <li>Customer Identity Service</li>
+                <li>Identity Verification Service</li>
+                <li>Customer Verification Platform</li>
+            </ul>
+            <p>Their semantic neighborhoods remain extremely close.</p>
+            <p>
+                A distinctive identity such as TrustID, for example, may be much easier to
+                retrieve precisely when it has been formally defined.
+            </p>
+            <p>A practical pattern is:</p>
+            <blockquote>
+                <p>Unique Identity + Human Description</p>
+            </blockquote>
+            <p>For example:</p>
+            <ul>
+                <li><code>TrustID</code> &ndash; Customer Identity Verification</li>
+                <li><code>FlowGate</code> &ndash; Transaction Approval Workflow</li>
+                <li><code>DataHarbor</code> &ndash; Governed Enterprise Data Repository</li>
+                <li><code>PolicyLens</code> &ndash; Policy Evaluation Engine</li>
+            </ul>
+            <p>The human-readable description explains the concept.</p>
+            <p>The distinctive identity preserves it.</p>
+
+            <h2>8. Do Not Completely Eliminate Common Words</h2>
+            <p>
+                Words such as platform, service, workflow, customer, cloud, data, and agent
+                remain useful.
+            </p>
+            <p>The objective is not to ban them.</p>
+            <p>Instead of writing:</p>
+            <blockquote>
+                <p>"The platform sends information to the data service."</p>
+            </blockquote>
+            <p>write:</p>
+            <blockquote>
+                <p>"AstraHub, the AI orchestration platform, sends the request to DataHarbor."</p>
+            </blockquote>
+            <p>After the terms are established, subsequent documentation can simply say:</p>
+            <blockquote>
+                <p>"AstraHub sends the request to DataHarbor."</p>
+            </blockquote>
+            <p>Specific identity and conceptual classification therefore work together.</p>
+
+            <h2>9. Create a Controlled Vocabulary</h2>
+            <p>
+                For important systems, terminology should become a governed artifact rather than
+                an accidental outcome of documentation.
+            </p>
+            <p>A simple vocabulary registry could contain:</p>
+            <table>
+                <tr>
+                    <th>Semantic Anchor</th>
+                    <th>Meaning</th>
+                    <th>Type</th>
+                    <th>Avoid Using</th>
+                </tr>
+                <tr>
+                    <td><code>AstraHub</code></td>
+                    <td>AI orchestration environment</td>
+                    <td>Platform</td>
+                    <td>AI Platform, Platform</td>
+                </tr>
+                <tr>
+                    <td><code>DataHarbor</code></td>
+                    <td>Governed enterprise data repository</td>
+                    <td>Data Domain</td>
+                    <td>Data Platform, Data Store</td>
+                </tr>
+                <tr>
+                    <td><code>SpecScout</code></td>
+                    <td>Requirement-analysis agent</td>
+                    <td>Agent</td>
+                    <td>Requirement Agent</td>
+                </tr>
+                <tr>
+                    <td><code>PolicyLens</code></td>
+                    <td>Policy evaluation capability</td>
+                    <td>Service</td>
+                    <td>Policy Engine</td>
+                </tr>
+                <tr>
+                    <td><code>FlowGate</code></td>
+                    <td>Transaction approval workflow</td>
+                    <td>Process</td>
+                    <td>Approval Process</td>
+                </tr>
+            </table>
+            <p>AI systems should receive this vocabulary as part of their persistent project context.</p>
+            <p>
+                Humans should use the same vocabulary in requirements, architecture,
+                development, testing, and operations.
+            </p>
+
+            <h3>Adopting it without a programme</h3>
+            <ul>
+                <li>Start with one bounded context, not the whole enterprise. Ambiguity is local first.</li>
+                <li>Keep the registry as a versioned file in the repository, next to the API contracts.</li>
+                <li>Enforce two rules only: first mention is <em>identity + description</em>, and two concepts never share an identity.</li>
+                <li>Review the registry when the architecture changes &mdash; a stale anchor is worse than a generic noun.</li>
+                <li>Feed the registry into every agent's persistent context and every retrieval index build.</li>
+            </ul>
+
+            <h2>10. A Simple Test for Choosing a Name</h2>
+            <p>Ask one question:</p>
+            <blockquote>
+                <p>
+                    If this sentence were removed from its document and shown independently to
+                    an AI or a new team member six months later, would they still know exactly
+                    what it refers to?
+                </p>
+            </blockquote>
+            <p>If the answer is no, the terminology probably depends too heavily on surrounding context.</p>
+            <p>Compare:</p>
+            <blockquote>
+                <p>"The platform sends the validated request to the service."</p>
+            </blockquote>
+            <p>with:</p>
+            <blockquote>
+                <p>"AstraHub sends the validated request to PolicyLens."</p>
+            </blockquote>
+            <p>The second sentence requires significantly less reconstructed context.</p>
+            <p>
+                That becomes increasingly valuable when thousands of pieces of enterprise
+                knowledge are being chunked, embedded, retrieved, summarized, and recombined by
+                AI.
+            </p>
+
+            <h2>11. Language Is Becoming Part of Architecture</h2>
+            <p>In traditional software engineering, we carefully designed:</p>
+            <ul>
+                <li>APIs</li>
+                <li>database schemas</li>
+                <li>class names</li>
+                <li>namespaces</li>
+                <li>message formats</li>
+                <li>domain models</li>
+            </ul>
+            <p>In AI-assisted engineering, we must add another artifact: the system vocabulary.</p>
+            <p>Names are no longer simply labels for human convenience.</p>
+            <p>They influence retrieval.</p>
+            <p>They influence context generation.</p>
+            <p>They influence how AI distinguishes concepts.</p>
+            <p>They influence how agents communicate.</p>
+            <p>They influence whether knowledge retains its meaning when extracted from its original source.</p>
+            <p>
+                Therefore, terminology should increasingly be treated with the same discipline as
+                API contracts and data models.
+            </p>
+
+            <h2>12. What the Research Already Says</h2>
+            <p>
+                The argument above is often made as a matter of style. It is actually the
+                intersection of several well-studied phenomena, each of which independently
+                predicts the same outcome.
+            </p>
+            <table>
+                <tr>
+                    <th>Established concept</th>
+                    <th>What it establishes</th>
+                    <th>Consequence for naming</th>
+                </tr>
+                <tr>
+                    <td>Information content &amp; inverse document frequency (Shannon, 1948;
+                        Robertson &amp; Sp&auml;rck Jones, BM25, 1976)</td>
+                    <td>A symbol's information is &minus;log&nbsp;p; in retrieval, a term is
+                        weighted by how rare it is across the corpus.</td>
+                    <td>A word present in every platform document is down-weighted exactly
+                        where you need it to discriminate. See the calculation below.</td>
+                </tr>
+                <tr>
+                    <td>Zipf's law and the principle of least effort (Zipf, 1949)</td>
+                    <td>Both writers and readers drift toward the shortest high-frequency
+                        form available.</td>
+                    <td>"The platform" and "the service" are not carelessness; they are the
+                        predictable steady state of an ungoverned vocabulary.</td>
+                </tr>
+                <tr>
+                    <td>The vocabulary problem (Furnas et al., <em>CACM</em>, 1987)</td>
+                    <td>Unconstrained people choose the same word for the same object only
+                        10&ndash;20% of the time.</td>
+                    <td>Agreement cannot be assumed, so terminology must be
+                        <em>legislated</em>, not consensus-built.</td>
+                </tr>
+                <tr>
+                    <td>Polysemy and lexical ambiguity in information retrieval</td>
+                    <td>One surface form, several senses: a single token sequence matches
+                        the union of all meanings.</td>
+                    <td>"Review process" cannot be disambiguated by ranking; only a distinct
+                        form removes the ambiguity.</td>
+                </tr>
+                <tr>
+                    <td>Hubness and anisotropy in high-dimensional spaces (Radovanovi&#263;
+                        et al., <em>JMLR</em>, 2010; Ethayarajh, 2019)</td>
+                    <td>In high dimensions a few points become "hubs" that are near
+                        neighbours of almost everything; contextual embeddings occupy a
+                        narrow cone, not a sphere.</td>
+                    <td>Generic concept vectors sit in the crowded centre and match
+                        everything weakly. A distinctive anchor occupies sparse space and
+                        matches precisely.</td>
+                </tr>
+                <tr>
+                    <td>Encoding specificity and context-dependent memory (Tulving &amp;
+                        Thomson, 1973; Godden &amp; Baddeley, 1975)</td>
+                    <td>Recall succeeds when the cue at retrieval matches the cue at
+                        encoding.</td>
+                    <td>An anchor is context folded into the cue. The chunk carries its own
+                        retrieval context, so it still works when re-embedded alone.</td>
+                </tr>
+                <tr>
+                    <td>Distinctiveness (von Restorff) effect, 1933</td>
+                    <td>An item that differs from its neighbours is disproportionately
+                        remembered and recalled.</td>
+                    <td>Distinctive names also help humans scanning hundreds of near-identical
+                        tickets, tests and dashboards.</td>
+                </tr>
+                <tr>
+                    <td>Identifier quality in program comprehension (Lawrie, Feild &amp;
+                        Binkley, 2006; Hofmeister et al., 2017)</td>
+                    <td>Intention-revealing, full-word identifiers improve comprehension;
+                        abbreviations measurably increase reading time.</td>
+                    <td>The anchor must be a pronounceable word, not a compressed code.
+                        Distinctive &ne; cryptic.</td>
+                </tr>
+                <tr>
+                    <td>Ubiquitous Language and Bounded Context (Evans, <em>Domain-Driven
+                            Design</em>, 2003)</td>
+                    <td>A term is unambiguous only inside its boundary; the same word
+                        legitimately differs across boundaries.</td>
+                    <td>"Platform" is not a bad word. It is a word used outside its boundary
+                        without the boundary being present in the text.</td>
+                </tr>
+                <tr>
+                    <td>Unique Name Assumption (description logics, OWL)</td>
+                    <td>Distinct names denote distinct individuals unless equality is
+                        explicitly asserted.</td>
+                    <td>The formal version of "one concept, one name" &mdash; and the reason
+                        duplicate names silently merge two entities in a knowledge graph.</td>
+                </tr>
+                <tr>
+                    <td>Controlled vocabulary standards (SKOS; ISO 25964 thesauri)</td>
+                    <td>Preferred term, non-preferred term ("use for"), scope note.</td>
+                    <td>The registry in section 9 is a known, standard artifact type, not an
+                        invention.</td>
+                </tr>
+                <tr>
+                    <td>Subword tokenization (BPE; Sennrich et al., 2016)</td>
+                    <td>Rare strings are split into more subword tokens.</td>
+                    <td>The one genuine cost of coining: keep anchors short, pronounceable
+                        and ideally two syllables.</td>
+                </tr>
+            </table>
+
+            <h3>The retrieval argument in one calculation</h3>
+            <p>
+                Take the BM25 inverse-document-frequency term, ln((N &minus; df + 0.5) /
+                (df + 0.5) + 1), over a corpus of 10,000 documents. A term that appears in
+                2,000 of them scores about 1.6; a term that appears in 3 of them scores about
+                8.0. The generic word is worth roughly <em>one fifth</em> of the distinctive
+                one, in the only currency lexical retrieval uses. No amount of ranking
+                sophistication recovers a distinction the vocabulary never made.
+            </p>
+            <aside>
+                <p>
+                    <strong>Why the convergence matters.</strong> Four independent
+                    mechanisms &mdash; information weight in lexical retrieval, geometry in
+                    dense retrieval, cue-matching in human memory, and readability in program
+                    comprehension &mdash; all point to the same design rule. When unrelated
+                    lines of evidence agree, the rule stops being a matter of taste and starts
+                    being engineering.
+                </p>
+            </aside>
+
+            <h2>13. Where This Rule Does Not Apply</h2>
+            <p>Like every naming discipline, it has boundaries:</p>
+            <ul>
+                <li>
+                    <strong>External contracts.</strong> Never rename a published API field,
+                    event or message to coin an anchor. Anchor the documentation, not the wire
+                    format.
+                </li>
+                <li>
+                    <strong>One anchor per concept.</strong> Synonyms defeat the purpose &mdash;
+                    that is what the "Avoid Using" column in the registry exists for.
+                </li>
+                <li>
+                    <strong>Ordinary prose.</strong> Marketing copy and narrative text need
+                    rhythm, not a registry.
+                </li>
+                <li>
+                    <strong>Near-identical anchors.</strong> If two anchors differ by a letter
+                    (<code>RiskProbe</code> / <code>RiskPro</code>), you have created a new
+                    collision. Prefer different first syllables.
+                </li>
+                <li>
+                    <strong>Token cost.</strong> A coined name can cost more tokens than a
+                    common word in models that use subword tokenization. Two short syllables
+                    keep the price negligible.
+                </li>
+                <li>
+                    <strong>Onboarding.</strong> An anchor is only cheap if it is defined once
+                    and easy to find &mdash; the description must always travel with the first
+                    mention.
+                </li>
+            </ul>
+
+            <h2>Conclusion: Design for Shared Human-AI Understanding</h2>
+            <p>
+                Enterprise systems are entering an environment where humans and AI continuously
+                consume the same knowledge.
+            </p>
+            <p>That changes the requirements for language.</p>
+            <p>We need terminology that is:</p>
+            <p>Distinctive. Stable. Searchable. Consistent. Context-independent.</p>
+            <p>
+                For the important concepts within a system, a deliberately uncommon word can
+                provide something extremely valuable: identity.
+            </p>
+            <p>The principle can therefore be summarized simply:</p>
+            <blockquote>
+                <p>Give common concepts descriptions. Give important concepts identities.</p>
+            </blockquote>
+            <p>
+                When a concept has an identity that survives requirements, architecture, code,
+                tests, documentation, RAG retrieval, and AI conversations, we reduce ambiguity
+                for both humans and machines.
+            </p>
+            <p>
+                In an AI-native world, designing the vocabulary may become as important as
+                designing the system itself.
+            </p>
+
+            <h2>References</h2>
+            <ol>
+                <li>Shannon, C. E. "A Mathematical Theory of Communication." <em>Bell System Technical Journal</em>, 1948.</li>
+                <li>Robertson, S. E., Sp&auml;rck Jones, K. "Relevance Weighting of Search Terms." <em>JASIS</em>, 1976 (IDF and the BM25 weighting family).</li>
+                <li>Zipf, G. K. <em>Human Behavior and the Principle of Least Effort</em>. Addison-Wesley, 1949.</li>
+                <li>Furnas, G. W., Landauer, T. K., Gomez, L. M., Dumais, S. T. "The Vocabulary Problem in Human-System Communication." <em>Communications of the ACM</em>, 1987.</li>
+                <li>Radovanovi&#263;, M., Nanopoulos, A., Ivanovi&#263;, M. "Hubs in Space: Popular Nearest Neighbors in High-Dimensional Data." <em>JMLR</em>, 2010.</li>
+                <li>Ethayarajh, K. "How Contextual are Contextualized Word Representations?" <em>EMNLP</em>, 2019.</li>
+                <li>Tulving, E., Thomson, D. M. "Encoding Specificity and Retrieval Processes in Episodic Memory." <em>Psychological Review</em>, 1973.</li>
+                <li>Godden, D. R., Baddeley, A. D. "Context-Dependent Memory in Two Natural Environments." <em>British Journal of Psychology</em>, 1975.</li>
+                <li>von Restorff, H. "&Uuml;ber die Wirkung von Bereichsbildungen im Spurenfeld." <em>Psychologische Forschung</em>, 1933.</li>
+                <li>Lawrie, D., Feild, H., Binkley, D. "What's in a Name? A Study of Identifiers." <em>ICPC</em>, 2006.</li>
+                <li>Hofmeister, J., Siegmund, J., Holt, D. V. "Shorter Identifier Names Take Longer to Comprehend." <em>SANER</em>, 2017.</li>
+                <li>Evans, E. <em>Domain-Driven Design: Tackling Complexity in the Heart of Software</em>. Addison-Wesley, 2003.</li>
+                <li>W3C. <em>SKOS Simple Knowledge Organization System Reference</em>, 2009; ISO 25964-1:2011 <em>Thesauri and interoperability with other vocabularies</em>.</li>
+                <li>Sennrich, R., Haddow, B., Birch, A. "Neural Machine Translation of Rare Words with Subword Units." <em>ACL</em>, 2016.</li>
+            </ol>
+
+            <h3>See also</h3>
+            <ul>
+                <li><a href="md/techbit-clean-code-naming.html">Clean Code Notes: naming conventions</a> &mdash; the identifier-level version of the same argument.</li>
+                <li><a href="article-self-aware-sdlc.html">The Self-Aware SDLC</a> &mdash; why captured artifacts need stable identities to be reused across the lifecycle.</li>
+            </ul>
+        </section>
+    </article>
+    <div id="footer-placeholder"></div>
+</body>
+
+</html>
