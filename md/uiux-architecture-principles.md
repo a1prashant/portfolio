@@ -29,6 +29,8 @@ For example, with a modern React stack:
 
 **Figma → Figma Variables / Design Tokens → Tailwind CSS → React Components → Storybook → Applications**
 
+**For instance:** For a banking approval screen, a UI/UX designer defines the required semantic states and interaction behavior, while a frontend engineer maps them to shared `status-critical`, `action-primary`, `surface-raised` and form-field components. A theme token can then update the experience consistently across applications.
+
 ---
 
 ## 2. Design the Ecosystem, Not Individual Applications
@@ -46,6 +48,8 @@ Standardize the elements that create familiarity:
 - AI interactions, where applicable
 
 Individual applications can maintain their own identity and capabilities while inheriting the common experience foundation.
+
+**For instance:** Onboarding, account servicing and claims applications should share familiar navigation, sign-in, notification language and support workflows. UI/UX designers ensure this consistency, while frontend engineers implement it through shared layouts and patterns.
 
 ---
 
@@ -74,6 +78,8 @@ For example:
 - `status-critical` rather than `red-text`
 
 This separates experience intent from implementation and makes themes, branding and future design changes significantly easier to manage.
+
+**For instance:** When a brand changes its primary action color, designers update the meaning of `action-primary` rather than adding a new `blue-button` or `green-button` component. Frontend engineers consume the same semantic token and avoid duplicate implementations.
 
 ---
 
@@ -113,6 +119,8 @@ Frequently occurring experiences should also be standardized, such as:
 
 This creates **behavioral consistency**, not merely visual consistency.
 
+**For instance:** Search should have the same behavior across customer 360, support and analytics applications: query entry, filters, loading state, empty state and result feedback. UI/UX teams define the shared interaction; frontend teams implement it once as a reusable experience.
+
 ---
 
 ## 7. Design for Change
@@ -126,6 +134,8 @@ Architecture should therefore isolate frequently changing decisions behind commo
 **Tokens → Themes → Components → Experience Patterns → Applications**
 
 A change to a shared design decision should ideally propagate through the system rather than require application-by-application rework.
+
+**For instance:** When an audit panel is required for consequential operations, designers define its information hierarchy and approval behavior once. Frontend engineers make it a shared, extensible pattern with application-specific content where needed.
 
 ---
 
@@ -157,6 +167,8 @@ This philosophy applies to:
 
 Complexity should exist where necessary without being imposed on every user.
 
+**For instance:** A policy administrator should see advanced assignment rules only after selecting “Advanced configuration.” Designers decide when complexity appears; frontend engineers expose it progressively without making it the default for every user.
+
 ---
 
 ## 10. Make System Behavior Understandable
@@ -173,6 +185,8 @@ Users should understand:
 For AI-enabled systems this becomes particularly important because outcomes may be probabilistic rather than deterministic.
 
 **Visibility builds confidence and trust.**
+
+**For instance:** An AI-assisted underwriting tool should show whether it is analyzing documents, retrieving policy rules or preparing a recommendation. Designers define these states and explanations; frontend engineers preserve them through loading, result and review components.
 
 ---
 
@@ -204,6 +218,8 @@ For systems capable of recommending or performing actions, a useful progression 
 **Suggest → Explain → Confirm → Act → Report**
 
 The degree of human intervention can vary according to the risk and reversibility of the action.
+
+**For instance:** An AI support assistant may suggest the next action, explain why it is relevant and require an agent to confirm it before changing a customer's policy. Frontend engineers must keep the confirmation and resulting outcome clear.
 
 ---
 
@@ -245,6 +261,8 @@ These should be designed as part of the normal experience rather than treated as
 
 Users should understand both **what happened and what they can do next**.
 
+**For instance:** If a claims document upload succeeds only partially, the interface should identify the received, missing and unreadable documents. Designers specify the recovery flow; frontend engineers provide targeted retry and alternate-upload actions.
+
 ---
 
 ## 15. Context Over Unnecessary Navigation
@@ -254,6 +272,8 @@ Bring relevant information, actions and capabilities into the user's current con
 Avoid forcing users through multiple applications, menus or pages simply because backend capabilities are separated technically.
 
 The system architecture may be distributed while the **user experience remains cohesive**.
+
+**For instance:** An employee resolving a customer request should not need to switch between separate identity, policy and claims applications. Designers bring the relevant summary and actions into one workspace; frontend engineers preserve context while integrating independent services.
 
 ---
 
@@ -292,6 +312,8 @@ Accessibility considerations should include:
 
 Shared components are particularly important because solving accessibility once at the component-system level allows many applications to inherit the solution.
 
+**For instance:** A shared date-picker should support keyboard navigation, visible focus, screen-reader labels, sufficient contrast and reduced motion. Designers specify these requirements; frontend engineers build and test them once so every application inherits them.
+
 ---
 
 ## 18. Governed Freedom
@@ -311,6 +333,8 @@ Governance should define how:
 - exceptions are approved
 - standards evolve
 - obsolete components are deprecated
+
+**For instance:** A product team may need an approval flow that is not yet in the shared library. Designers should propose and validate the pattern, while frontend engineers build it as a reusable component after a governed review. The exception should become a standard only after proving it across real use cases.
 
 ---
 
@@ -337,6 +361,8 @@ to:
 
 **Executable Standard**
 
+**For instance:** Pull requests can verify token names, flag prohibited component imports, test keyboard behavior and run visual-regression snapshots. Frontend engineers add these automated checks to the component and delivery pipeline, giving teams immediate feedback.
+
 ---
 
 ## 20. Measure Experience, Not Feature Delivery
@@ -357,6 +383,8 @@ Measure outcomes such as:
 - user trust
 
 Experience architecture should evolve based on evidence from actual usage.
+
+**For instance:** If a claims-upload flow has a high mobile retry rate, designers should improve the error and recovery experience based on task-completion data, while frontend engineers instrument the steps and validate the improved flow.
 
 ---
 
